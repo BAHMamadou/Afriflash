@@ -1,0 +1,85 @@
+.container{
+    
+    .content-page{
+        margin-top: 4vh;
+
+        .head-web{
+            
+            margin-left: 3rem;
+            width: 60vw;
+            
+            .title{
+                margin-top: 8rem;
+                font-weight: bold;
+                margin-bottom: 2rem;
+            }
+
+            .choice-style{
+                display: flex;
+                flex-direction: row;
+                background-color: var(--ion-color-gris);
+
+                div{
+                    display: flex;
+                    flex-direction: row;
+                }
+                
+                select{
+                    width: max-content;
+                    height: max-content;
+                    margin-top: 1.1rem;
+                }
+            }
+        }
+
+        .head-mobile{
+            
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+            
+            .title{
+                margin-top: 8rem;
+                font-weight: bold;
+                margin-bottom: 2rem;
+            }
+
+            .choice-style{
+                display: flex;
+                flex-direction: column;
+                background-color: var(--ion-color-gris);
+
+                div{
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                select{
+                    width: max-content;
+                    height: max-content;
+                    margin-top: -3rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        ion-spinner {
+            width: 6vw;
+            margin-left: 46VW;
+            margin-right: 49VW;
+            height: 50vh;
+        }
+
+        .pagination-controls {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3vh;
+            width: max-content;
+        }
+
+        .pagination-controls-mobile-style {
+            margin-left: 0rem;
+            margin-right: 0rem;
+        }
+    }
+}

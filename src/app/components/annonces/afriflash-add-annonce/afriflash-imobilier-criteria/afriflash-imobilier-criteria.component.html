@@ -1,0 +1,24 @@
+<div class="criteres row">
+
+
+    <div class="surface-measure x-lg-6 m-0 p-0" id="surface-ad">
+        <div class="surface col-lg-8 ml-0 mr-0 pr-0">
+            <ion-label class="subtitle" for="surface">Surface en m²</ion-label>
+            <ion-input id="surface" type="number" [(ngModel)]="surface" class="form-control"
+                       (ionBlur)="sendData()">
+            </ion-input>
+        </div>
+    </div>
+
+    <div class="circulationDate x-lg-6">
+        <div class=" measure col-lg-4 ml-0 mr-0 p-0">
+            <ion-label *ngIf="!isTerrain">Pièces</ion-label>
+            <ion-label *ngIf="isTerrain">Parcelles</ion-label>
+            <ion-select (ionBlur)="sendData()" [(ngModel)]="piece" class="form-control">
+                <ion-select-option *ngFor="let piece of pieces" value="{{ piece }}">
+                    {{ piece }}
+                </ion-select-option>
+            </ion-select>
+        </div>
+    </div>
+</div>

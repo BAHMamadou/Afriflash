@@ -1,0 +1,73 @@
+      
+    .container {
+
+        position: relative;
+        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: auto;
+
+      .content-page {
+
+                height: auto !important;
+                padding-bottom: 0rem !important;
+                
+                .close {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    text-align: right;
+                    cursor: pointer;
+                }
+
+                .formulaire {
+                    margin-bottom: 0vh !important;
+                    padding-bottom: 10vh !important;
+                    width: max-content;
+
+                    .part {
+                        margin-top: 1rem;
+                        color: var(--ion-color-secondary);
+                        font-size: 1.3rem;
+                    }
+
+                    .gender{
+
+                        margin-right: auto;
+                        .choice{
+                                
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 1rem;
+
+                            div{
+                                margin-right: 1rem;
+                                label{
+                                    margin-left: 0.5rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .birthday {
+                        width: max-content;
+                        margin-left: 9vw;
+                        margin-right: 9vw
+                    }
+
+                    .password{
+
+                        width: max-content;
+                        margin: auto;
+                        margin-top: 1rem;
+
+                        ion-label{
+                            color: var(--ion-color-grey-lighter);
+                        }
+
+                        .button{
+                            margin-top: 1rem;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+        }
+    }

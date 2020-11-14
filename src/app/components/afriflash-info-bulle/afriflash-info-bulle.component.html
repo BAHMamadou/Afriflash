@@ -1,0 +1,14 @@
+<div class="content-page"> 
+
+  <div class="message" [ngClass]="{
+    'style-infobulle-error': type == 'error',
+    'style-infobulle-warning': type == 'warning',
+    'style-infobulle-validate': type == 'validate',
+    'style-infobulle-info': type == 'info'
+  }">
+
+    {{message}}
+
+  </div>
+  
+</div>

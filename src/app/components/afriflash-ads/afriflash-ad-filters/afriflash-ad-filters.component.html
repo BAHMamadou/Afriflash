@@ -1,0 +1,136 @@
+<div class="content-page">
+
+  <div class="filters col">
+
+      <div class="type-annonce row">
+        <ion-item id="annonce-type">
+          <ion-label class="subtitle">Type d'annonce</ion-label>
+          <ion-select [(ngModel)]="criteres.typeAnnonce">
+              <ion-select-option value="Tous">Tous</ion-select-option>
+              <ion-select-option value="Vente"> Vente</ion-select-option>
+              <ion-select-option value="Location"> Location</ion-select-option>
+              <ion-select-option value="Prestation"> Prestation</ion-select-option>
+              <ion-select-option value="Récrutement"> Récrutement</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="category-subCategory-location row">
+
+          <div class="category col x-lg-4">
+            <ion-item *ngIf="categories" id="category">
+              <ion-label class="subtitle">Catégories</ion-label>
+              <ion-select (ionChange)="getCategory($event)" [(ngModel)]="criteres.category">
+                  <ion-select-option value="Tous">
+                      Tous
+                  </ion-select-option>
+                  <ion-select-option *ngFor="let category of categories" value="{{ category }}">
+                      {{ category }}
+                  </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+          <div class="sub-category col x-lg-4" *ngIf="subCategories">
+            <ion-item id="subCategory" *ngIf="subCategories">
+              <ion-label class="subtitle">Sous-Catégories</ion-label>
+              <ion-select multiple="true" id="sub-category" (ionChange)="getSubCategory($event)" [(ngModel)]="criteres.subCategories">
+                  <!-- <ion-select-option value="subCategory" selected>
+                    Choisissez une sous-catégorie
+                  </ion-select-option> -->
+                  <ion-select-option *ngFor="let subCategory of subCategories" value="{{ subCategory }}">
+                      {{ subCategory }}
+                  </ion-select-option>
+              </ion-select>
+             </ion-item>
+          </div>
+
+          <div class="location col x-lg-4">
+            <ion-item id="country" *ngIf="countries">
+              <ion-label class="country">Pays</ion-label>
+              <ion-select id="country-annonce" [(ngModel)]="criteres.country">
+                  <!-- <ion-select-option value="subCategory" selected>
+                    Choisissez une sous-catégorie
+                  </ion-select-option> -->
+                  <ion-select-option value="Tous">
+                    Tous
+                  </ion-select-option>
+                  <ion-select-option *ngFor="let country of countries" value="{{ country }}">
+                      {{ country }}
+                  </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+      </div>
+
+      <div class="criteres row"  *ngIf="criteres">
+
+        <div class="row" *ngIf="criteres.category && criteres.category === 'Véhicules'
+              && (subCategoryIsExist('Voitures') || subCategoryIsExist('Motos'))">
+
+              <div class="marque col x-lg-6">
+                <ion-item id="marque" *ngIf="marques">
+                  <ion-label class="subtitle">Marque</ion-label>
+                  <ion-select [(ngModel)]="vehicleCriteres.marque">
+                    <ion-select-option *ngFor="let marque of marques" value="{{ marque }}">
+                      {{ marque | titlecase  }}
+                    </ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </div>
+
+              <div class="year col x-lg-6">
+                <!-- <ion-item>
+                  <ion-range id="dual-range" dual-knobs pin color="dark">
+                    <ion-icon slot="start" size="small" name="brush"></ion-icon>
+                    <ion-icon slot="end" name="brush"></ion-icon>
+                  </ion-range>
+                </ion-item> -->
+                  <!-- <ion-item>
+                    <ion-label>dual, step=3, snaps, </ion-label>
+                    <ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>
+                  </ion-item> -->
+              </div>
+
+              <!-- <div class="kilometrage">
+
+              </div> -->
+
+        </div>
+
+        <!-- <div *ngIf="criteres.category && criteres.category === 'Services'">
+
+              <div class="profession">
+
+              </div>
+
+              <div class="move">
+
+              </div>
+
+        </div> -->
+
+        <div class="row" *ngIf="criteres.category && criteres.category === 'Immobilier'">
+
+              <!-- <div class="surface">
+                surface
+              </div> -->
+
+        </div>
+
+      </div>
+
+      <div class="search-button">
+        <div class="spinner" [hidden]="hiddeSpinner">
+          <ion-spinner name="bubbles"></ion-spinner>
+        </div>
+        <button class="btn btn-primary" (click)="search()">Rechercher</button>
+      </div>
+
+  </div>
+  <!-- <script>
+    const dualRange = document.querySelector('#dual-range');
+    dualRange.value = { lower: 33, upper: 60 };
+  </script> -->
+</div>

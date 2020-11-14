@@ -1,0 +1,9 @@
+<ion-content>
+
+    <div class="annonce-infos" *ngIf="annonceInformation">
+        <app-afriflash-ad-details [annonceInformation]="annonceInformation">
+
+        </app-afriflash-ad-details>
+    </div>
+    <button (click)="actualize()" hidden id="actualize">actualize</button>
+</ion-content>

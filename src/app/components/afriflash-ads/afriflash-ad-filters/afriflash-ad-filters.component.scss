@@ -1,0 +1,39 @@
+.content-page {
+    margin-top: 15vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+    .filters {
+        // border: 1px solid;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        box-shadow: 0px 0px , 0em 0 0.4em var(--ion-color-gris-bold);
+
+        ion-item {
+            // border: 1px solid;
+            margin-top: 0.3rem;
+            box-shadow: 0px 0px, 0em 0 0.3em var(--ion-color-gris-bold)
+        }
+
+        ion-label {
+            color: var(--ion-color-principal)
+        }
+
+        .type-annonce, .criteres {
+            margin-left: 0vh;
+        }
+
+        .search-button {
+            margin-top: 0.5rem;
+            padding-bottom: 0.2rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: max-content; 
+
+            .spinner {
+                
+            }
+        }
+    }
+
+}

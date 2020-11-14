@@ -1,0 +1,293 @@
+<div class="content-page">
+
+    <div class="form" [ngClass]="{
+      'mobile-style':isWeb == false,
+      'web-style':isWeb == true
+    }">
+        <!-- =========================================== Message de warning ============================ -->
+        <div class="warnig-msg alert alert-danger" *ngIf="!isAuth">
+            Veuillez-vous connecter avant de publier votre annonce
+        </div>
+
+        <!-- =========================================== Votre annonce ================================== -->
+
+
+        <div class="your-annonce">
+
+            <div class="title" *ngIf="action !='update'">
+                Votre annonce
+            </div>
+            <div class="title" *ngIf="action =='update'">
+                Modification de votre annonce
+            </div>
+
+            <div class="you-are">
+
+                <div class="subtitle"> Vous êtes *</div>
+
+                <div class="choice-acount">
+
+                    <div class="particulier">
+                        <ion-label for="Particulier">Particulier</ion-label>
+
+                        <input type="radio" id="Particulier" [name]="acountType" value="Particulier" checked
+                               (click)="emitAcountType()"/>
+                    </div>
+
+                    <div>
+                        <ion-label for="Professionnel">Professionnel</ion-label>
+
+                        <input id="Professionnel" type="radio" name="acountType" value="Professionnel"
+                               (click)="emitAcountType()"/>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <ion-item id="annonce-type">
+                <ion-label class="subtitle">Type d'annonce *</ion-label>
+                <ion-select (ionChange)="getAnnonceType($event)" [(ngModel)]="annonceType">
+                    <ion-select-option value="Vente"> Vente</ion-select-option>
+                    <ion-select-option value="Location"> Location</ion-select-option>
+                    <ion-select-option value="Prestation"> Prestation</ion-select-option>
+                    <ion-select-option value="Récrutement"> Récrutement</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <div class="annonce-title">
+                <ion-label class="subtitle" for="annonce-title">Titre de l'annonce *</ion-label>
+                <ion-input id="annonce-title" type="text" [(ngModel)]="annonceTitle"></ion-input>
+            </div>
+
+            <ion-item *ngIf="categories" id="category">
+                <ion-label class="subtitle">Choisissez une catégorie *</ion-label>
+                <ion-select (ionChange)="getCategory($event)" [(ngModel)]="category">
+                    <!-- <ion-select-option value="category" selected>
+                        Choisissez une catégorie
+                    </ion-select-option> -->
+                    <ion-select-option *ngFor="let category of categories" value="{{ category }}">
+                        {{ category }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item id="subCategory" *ngIf="subCategories">
+                <ion-label class="subtitle">Choisissez une sous-catégorie *</ion-label>
+                <ion-select id="sub-category" (ionChange)="getSubCategory($event)" [(ngModel)]="subCategory">
+                    <!-- <ion-select-option value="subCategory" selected>
+                      Choisissez une sous-catégorie
+                    </ion-select-option> -->
+                    <ion-select-option *ngFor="let subCategory of subCategories" value="{{ subCategory }}">
+                        {{ subCategory }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <!-- Importation des mini formulaire en fonction du choix de la catégorie -->
+            <div class="criteres" [hidden]="hideCriteres">
+
+              <div *ngIf="action !='update'">
+                  <app-afriflash-vehicle-criteria *ngIf="displayVehicleCritere" (emitData)="getData($event)"
+                                                  [subCategoryType]="subCategory">
+                  </app-afriflash-vehicle-criteria>
+
+                  <app-afriflash-imobilier-criteria *ngIf="displayImobilierCritere" (emitData)="getData($event)"
+                                                    [isTerrain]="isTerrain">
+                  </app-afriflash-imobilier-criteria>
+
+                  <app-afriflash-service-criteria *ngIf="displayServiceCritere" (emitData)="getData($event)"
+                                                  [subCategoryType]="subCategory">
+                  </app-afriflash-service-criteria>
+
+              </div>
+
+               <div *ngIf="action== 'update'">
+                   <app-afriflash-vehicle-criteria *ngIf="displayVehicleCritere" (emitData)="getData($event)"
+                                                   [subCategoryType]="subCategory"
+                                                   [marque]="vehicleCriteres.marque"
+                                                   [modele]="vehicleCriteres.modele"
+                                                   [kilometrage]="vehicleCriteres.kilometrage"
+                                                   [action]="action"
+                                                   [yearCirculation]="vehicleCriteres.yearCirculation">
+
+                   </app-afriflash-vehicle-criteria>
+
+                   <app-afriflash-imobilier-criteria *ngIf="displayImobilierCritere" (emitData)="getData($event)"
+                                                     [isTerrain]="isTerrain"
+                                                     [surface]="immobilierCriteres.surface"
+                                                     [action]="action"
+                                                     [surfaceMeasure]="immobilierCriteres.surfaceMeasure"
+                                                     [piece]="immobilierCriteres.piece">
+                   </app-afriflash-imobilier-criteria>
+
+                   <app-afriflash-service-criteria *ngIf="displayServiceCritere" (emitData)="getData($event)"
+                                                   [subCategoryType]="subCategory"
+                                                   [isMoving]="serviceCriteres.isMoving"
+                                                   [profession]="serviceCriteres.profession"
+                                                   [action]="action">
+                   </app-afriflash-service-criteria>
+               </div>
+
+            </div>
+
+            <div class="annonce-description">
+                <ion-label class="subtitle" class="description-ad">Description *</ion-label>
+                <textarea id="description-ad" name="description-ad" rows="5" cols="33"
+                          (change)="handleDescription($event)" [value]="description"></textarea>
+            </div>
+
+            <div class="annonce-price row m-0 p-0" id="price-ad">
+                <div class="price col-lg-8 ml-0 mr-0 pr-0">
+                    <ion-label class="price" for="price">Prix</ion-label>
+                    <ion-input class="form-control" id="price" type="number" [(ngModel)]="price">
+                    </ion-input>
+                </div>
+                <div class="currency col-lg-4 ml-0 mr-0 pr-0">
+                    <ion-label>Dévise</ion-label>
+                    <ion-select class="form-control" [(ngModel)]="currency">
+                        <ion-select-option *ngFor="let currency of currencies" value="{{ currency }}">
+                            {{ currency }}
+                        </ion-select-option>
+                    </ion-select>
+                </div>
+            </div>
+
+            <div class="photos" *ngIf="photos">
+                <div class="photo">
+                    <label for="file" *ngIf="icon && !photos[0]" class="label-file">
+                        <img src="./assets/icon/{{ icon }}.png" alt="icon"/>
+                    </label>
+                    <label *ngIf="photos[0]" class="exist-file" (click)="removeImage(0)">
+                        X
+                        <img [src]="photos[0]" alt="icon"/>
+                    </label>
+                    <input id="file" class="input-file" type="file"
+                           (change)="createImageFromBlob($event.target.files[0])"/>
+                </div>
+
+                <div class="photo">
+                    <label for="file_2" *ngIf="icon && !photos[1]" class="label-file">
+                        <img src="./assets/icon/{{ icon }}.png"/>
+                    </label>
+                    <label class="exist-file" *ngIf="photos[1]" (click)="removeImage(1)">
+                        X
+                        <img [src]="photos[1]" alt="icon"/>
+                    </label>
+                    <input id="file_2" class="input-file" type="file"
+                           (change)="createImageFromBlob($event.target.files[0])"/>
+                </div>
+
+                <div class="photo">
+                    <label for="file_3" class="label-file" *ngIf="icon && !photos[2]">
+                        <img src="./assets/icon/{{ icon }}.png"/>
+                    </label>
+                    <label class="exist-file" *ngIf="photos[2]" (click)="removeImage(2)">
+                        X
+                        <img [src]="photos[2]" alt="icon"/>
+                    </label>
+                    <input id="file_3" class="input-file" type="file"
+                           (change)="createImageFromBlob($event.target.files[0])"/>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= Votre adresse ========================================== -->
+
+        <div class="your-adress space">
+
+            <div class="title">
+                Votre adresse
+            </div>
+
+            <ion-item id="country" *ngIf="countries">
+                <ion-label class="country">Pays *</ion-label>
+                <ion-select id="country-annonce" [(ngModel)]="country">
+                    <!-- <ion-select-option value="subCategory" selected>
+                      Choisissez une sous-catégorie
+                    </ion-select-option> -->
+                    <ion-select-option *ngFor="let country of countries" value="{{ country }}">
+                        {{ country }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <div class="city">
+                <ion-label class="subtitle" for="city">Ville *</ion-label>
+                <ion-input id="city" type="text" [(ngModel)]="city"></ion-input>
+            </div>
+
+            <div class="details">
+                <ion-label class="subtitle" for="details">Plus de précision</ion-label>
+                <textarea id="details-adress" name="details-adress" rows="5" cols="33"
+                          [value]="details" (change)="handleAdresseDetails($event)"></textarea>
+            </div>
+
+        </div>
+
+        <!-- =============================================== Vos informations =============================== -->
+
+        <div class="your-adress space">
+
+            <div class="title">
+                Vos informations
+            </div>
+
+            <!-- Dans le cas ou c'est un compte pro -->
+            <div class="society-name" [hidden]='displaySocietyName'>
+                <ion-label class="subtitle" for="society-name">Nom de la société *</ion-label>
+                <ion-input id="society-name" type="text" [(ngModel)]="societyName"></ion-input>
+            </div>
+
+
+            <div class="annonce-phone row mt-4 mb-5 m-0 p-0" id="annonce-phone">
+                <div class="indicatif col-lg-4 ml-0 mr-0 pr-0" id="indicatif" *ngIf="indicatifs">
+                        <ion-label>Indicatif</ion-label>
+                        <ion-select [(ngModel)]="indicatif" class="form-control">
+                            <ion-select-option *ngFor="let indicatif of indicatifs" value="{{ indicatif }}"
+                            class="form-control">
+                                {{ indicatif }}
+                            </ion-select-option>
+                        </ion-select>
+                </div>
+                <div class="phone col-lg-8 ml-0 mr-0 pr-0">
+                    <ion-label for="phone">Numéro de téléphone *</ion-label>
+                    <ion-input class="form-control" id="phone" type="number" [(ngModel)]="phone">
+                    </ion-input>
+                </div>
+            </div>
+
+            <div class="email">
+                <ion-label class="subtitle" for="email">Adresse mail</ion-label>
+                <ion-input id="email" type="text" [(ngModel)]="email"></ion-input>
+            </div>
+
+            <!-- Bouton pour publier une annonce  -->
+            <div class="publish">
+                <div class="process-form">
+                    <ion-spinner class="spinner" name="bubbles" *ngIf="displaySpinner && !message && !messageSuccess"></ion-spinner>
+                    <div *ngIf="message && message != ''" class="error alert alert-danger">
+                        {{ message }}
+                    </div>
+                    <div *ngIf="messageSuccess && messageSuccess != ''" class="error alert alert-success">
+                        {{ messageSuccess }}
+                    </div>
+                </div>
+                <button *ngIf="action!='update'" class="btn btn-primary" (click)="publishAnnonce()">
+                    Publier votre annonce
+                </button>
+                <button *ngIf="action=='update'" class="btn btn-primary" (click)="updateAnnonces()">
+                    Modifier votre annonce
+                </button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

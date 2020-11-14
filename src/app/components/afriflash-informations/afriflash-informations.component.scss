@@ -1,0 +1,26 @@
+.content-page{
+
+    .form{
+
+        ion-item{
+
+            ion-input{
+                
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        
+        .update{
+            color: var(--ion-color-consult-informations);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: max-content;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 1rem;
+        }
+    }
+
+}

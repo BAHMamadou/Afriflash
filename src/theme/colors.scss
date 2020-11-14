@@ -1,0 +1,73 @@
+
+// App colors
+:root {
+
+    // Couleurs principales
+    --ion-color-primary: var(--ion-color-blue);
+    --ion-color-secondary: var(--ion-color-orange);
+    --ion-toolbar-background: var(--ion-color-white);
+    --ion-toolbar-color: var(--ion-color-blue-darker);
+    --ion-color-body: var(--ion-color-gris);
+    --ion-color-footer: var(--ion-color-gris-bold);
+    --ion-color-principal: #46AEEE;
+    --ion-color-background: #F3F2F7;
+    --ion-color-footer: #fafafc;
+    --ion-toolbar-border-color: transparent;
+
+    // Couleurs boutons
+    --ion-color-consult-abonnement: #00C4F8;
+    --ion-color-manage-incidents: #9E6FF1;
+    --ion-color-consult-informations: #C5A716;
+    --ion-color-manage-passage: #02C59E;
+
+    --ion-color-finance-management: #DF6E21;
+    --ion-color-client-management: #C5919D;
+    --ion-color-employe-management: #E7B183;
+    --ion-color-logistic-management: #2096BA;
+
+    --ion-color-prospection: #b3ff66;
+    --ion-color-configuration: #2AA392;
+
+
+
+
+
+    --ion-color-consult-abonnement-lighter: #00EFDF;
+    --ion-color-manage-incidents-lighter: #EAB2F5;
+    --ion-color-consult-informations-lighter: #F3E79A;
+    --ion-color-manage-passage-lighter: #81F5BB;
+
+    --ion-color-consult-client-management-lighter: #C5919D;
+    --ion-color-consult-finance-management-lighter: #DF6E21;
+    --ion-color-consult-employe-management-lighter: #E7B183;
+    --ion-color-consult-logistic-management-lighter: #2096BA;
+    --ion-color-consult-abonnement-icon : #b785f3;
+
+    --ion-color-consult-prospection-lighter: #b3ff66;
+    --ion-color-consult-configuration-lighter: #2AA392;
+
+
+    // Couleur text
+    --ion-color-text-purple-darker: #051039;
+    --ion-color-text-purple-lighter: var(--ion-color-purple);
+
+    // Autre couleurs
+    --ion-color-blue: #4DAFFF;
+    --ion-color-white: white;
+    --ion-color-black: #000000;
+    --ion-color-red: #E52525;
+    --ion-color-orange: #FF8500;
+    --ion-color-blue-darker: #111D37;
+    --ion-color-blue-lighter: #00C4F8;
+    --ion-color-facebook-blue: #edf2fa;
+    --ion-color-green: #00D8CB;
+    --ion-color-green-lighter: #81F5BB;
+    --ion-color-grey-lighter: #8A8795;
+    --ion-color-grey-more-lighter: #C7CFD8;
+    --ion-color-purple: #774BCB;
+    --ion-color-grey:#7E7C85;
+    --ion-color-gris: #F9F9F9;
+    --ion-color-gris-bold: #707070;
+    --ion-border-color: #DBDBDB;
+
+}

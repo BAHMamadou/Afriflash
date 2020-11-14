@@ -1,0 +1,73 @@
+// Theme du composant boutton Africlean
+.africlean-button {
+
+    .web-style {
+        width: 13rem;
+        height: 10rem;
+        //  border-radius: 11px;
+        cursor: pointer;
+        margin: 0px!important;
+        padding: 0!important;
+
+        .content-button {
+
+            height: 100%;
+            width: inherit;
+            //    border-radius: 0.65rem;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+
+            // Personnalisation de l'image du bouton
+            .icon-button {
+                height: 98%;
+                width: 100%;
+                //    margin-top: 1rem;
+            }
+
+            .title {
+                margin-top: 1vh;
+                margin-bottom: 1vh;
+                font-size: 1rem;
+                white-space: pre-wrap;
+                line-height: 1;
+            }
+
+        }
+    }
+
+    .mobile-style {
+        width: 10rem;
+        height: 5rem;
+        //  border-radius: 11px;
+        cursor: pointer;
+        margin: 0px!important;
+        padding: 0!important;
+
+        .content-button {
+
+            height: 100%;
+            width: inherit;
+            //    border-radius: 0.65rem;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+
+            // Personnalisation de l'image du bouton
+            .icon-button {
+                height: 90%;
+                width: 100%;
+                //    margin-top: 1rem;
+            }
+
+            .title {
+                font-size: 0.8rem;
+                white-space: pre-wrap;
+                line-height: 1;
+                margin-bottom: 2%!important;
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,75 @@
+<!-- Entête de l'application -->
+<ion-header no-border [ngClass]="{'shadow' : shadow}" class="header">
+    
+  <ion-toolbar>
+
+        <div class="header" *ngIf="!isWeb">
+
+          <!-- Logo de l'application centré -->
+          <div class="logo" (click)="goHome()">
+            <img *ngIf="icon" src="./assets/icon/{{logo}}.svg" alt="icon">
+          </div>
+
+          <!-- Logo du menu situé à gauche du header -->
+          <div class="layout-button" (click)="clickButton.emit()">
+            <div class="menu-button">
+                <!-- <ion-icon *ngIf="icon" src="./assets/icon/{{ icon }}.svg" class="button-header"></ion-icon> -->
+                <ion-buttons slot="start">
+                  <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+            </div>
+          </div>
+        
+        </div>
+
+
+        <div class="header" *ngIf="isWeb">
+          
+          <!-- Logo de l'application centré -->
+          <div class="logo" (click)="goHome()">
+            <img *ngIf="icon" src="./assets/icon/{{logo}}.svg" alt="icon">
+          </div>
+
+          <div class="menu">
+
+            <div class="publish-ad div" (click)="goToPage('publish-annonce')"
+                  [ngClass]="{ 'active': page === 'publish-annonce' }">
+              publier une annonce
+            </div>
+
+            <div class="search div" (click)="goToPage('search-annonce')"
+                 [ngClass]="{ 'active': page === 'search-annonce' }">
+              Rechercher
+            </div>
+
+            <div class="announce div" (click)="goToMyAdd('my-annonces')"
+                 [ngClass]="{ 'active': page === 'my-annonces' }">
+              Mes annonces
+            </div>
+
+            <!-- <div class="contact">
+              Contact
+            </div> -->
+
+            <div class="login" *ngIf="status && status === 'connected'">
+                <span (click)="toggleSubMenu()">
+                  {{ user.name }}
+                  <img src="./assets/icon/chevron-bottom.PNG" alt="">
+                </span>
+                <div class="sub-menu" *ngIf="toggle">
+                    <span (click)="goToPage('/informations')">Mon compte</span>
+                    <span (click)="logOut()">Se déconnecter</span>
+                </div>
+            </div>
+
+            <div class="login" (click)="goToLoginPage()" *ngIf="status && status === 'disconnected'">
+              Se connecter
+            </div>
+
+          </div>
+
+        </div>
+
+    </ion-toolbar>
+
+</ion-header>

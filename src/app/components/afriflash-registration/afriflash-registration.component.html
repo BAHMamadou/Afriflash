@@ -1,0 +1,19 @@
+
+<div class="content-page">
+
+    <!-- Header de la page -->
+    <div class="header">
+                  <ion-grid>
+                      <ion-row class="title">
+                          <span>{{ 'PAGES.REGISTRATION.TITLE' | translate }}</span>
+                      </ion-row>
+                  </ion-grid>
+    </div>
+    
+    <!-- Création d'un compte utilisateur -->
+    <afriflash-user-registration [role]="'CLIENT'"
+                                 [action]="'create'"
+                                 [userType]="'client'">
+    </afriflash-user-registration>
+    
+</div>

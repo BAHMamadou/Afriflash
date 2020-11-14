@@ -1,0 +1,127 @@
+<ion-content>
+    <div class="content-page" [ngClass]="{
+        'content-page-mobile': isWeb === false
+    }">
+        <!-- Div principale  contenant les éléments de la page Home -->
+        <div class=" first-part col">
+            <div class="part-1">
+                <div class="button-recherche" [ngClass]="{
+                    'button-recherche-mobile': isWeb === false
+                }">
+                    <span>Recherchez une annonce de vente de bien ou de service</span>
+                </div>
+
+                <div class="search-publish-button" *ngIf="!isWeb">
+                    <div class="item button-announce">
+                        <afriflash-small-button [theme]="'btn-orange'" [title]="'Publier une annonce'"
+                                                (clickButton)="publish()">
+                        </afriflash-small-button>
+                    </div>
+                    <div class="item button-search">
+                        <afriflash-small-button [theme]="'btn-blue'" [title]="'Rechercher une annonce'"
+                                                (clickButton)="search()">
+                        </afriflash-small-button>
+                    </div>
+                </div>
+
+                <!-- Selection un pays -->
+                <!-- <div class="search-button col">
+                    <div class="select">
+                        <select #countrySelect>
+                            <option value="choose a country" selected>
+                                {{ 'PAGES.HOME.SELECT_A_COUNTRY' | translate }}
+                                Choisissez un pays
+                            </option>
+                            <option *ngFor="let country of countries" [value]="country">
+                                {{ country }}
+                            </option>
+                        </select>
+
+                    </div>
+                    <div>
+                        <button class="btn-primary buton-title-search" type="submit">Rechercher</button>
+                    </div>
+                </div> -->
+
+                <div class="video-presentation" [ngClass]="{
+                    'video-presentation-mobile': isWeb === false
+                }">
+                    <iframe width="310" height="200" src="https://www.youtube.com/embed/hHSwu37T_ZU" frameborder="0"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row form-inline m-0 slide-block">
+            <ion-col size="1">
+                <span class="slider-nav arrow-prev" (click)="slidePrev(sliderTwo,slideWithNav2)">
+                    <div *ngIf="isWeb" class="prev-icon-custom-web custon-nav web-style" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+                    <div *ngIf="!isWeb" class="prev-icon-custom-mobile custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+
+                </span>
+            </ion-col>
+            <ion-col size="10" *ngIf="isWeb">
+                <ion-slides #slideWithNav2>
+                    <ion-slide *ngFor="let slide of sliderTwo.slidesItems">
+                        <div *ngFor="let category of slide.s" class="m-0">
+                            <ion-col>
+
+                                <afriflash-button
+                                        [title]="category"
+                                        [icon]="category"
+                                        (clickButton)="goToPage(category)"
+                                        [isWeb]="isWeb">
+                                </afriflash-button>
+
+                            </ion-col>
+                        </div>
+
+                    </ion-slide>
+
+                </ion-slides>
+
+            </ion-col>
+
+
+            <ion-col size="10" *ngIf="!isWeb">
+                <ion-slides #slideWithNav2>
+                    <ion-slide *ngFor="let slide of sliderTwo.slidesItems">
+                        <div *ngFor="let category of slide.s" class="m-1 cate-slide">
+                            <ion-col>
+
+                                <afriflash-button
+                                        [title]="category"
+                                        [icon]="category"
+                                        (clickButton)="goToPage(category )"
+                                        [isWeb]="isWeb">
+                                </afriflash-button>
+
+                            </ion-col>
+                        </div>
+
+                    </ion-slide>
+
+                </ion-slides>
+
+            </ion-col>
+
+
+            <ion-col size="1">
+                <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav2)">
+                    <div class="next-icon-custom custon-nav" [class.disabled]="sliderTwo.isEndSlide"></div>
+                </span>
+            </ion-col>
+        </div>
+
+        <!-- <div class="m-0">
+            <div class="describe-test">
+                <span>Déposez en toute simplicité votre annonce de biens ou de services partout en Afrique</span>
+            </div>
+        </div> -->
+
+    </div>
+</ion-content>

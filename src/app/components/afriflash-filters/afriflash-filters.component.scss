@@ -1,0 +1,25 @@
+.content-page {
+
+    margin-bottom: 2rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    .filter {
+
+        ion-item {
+            margin-bottom: 1rem;
+
+            ion-label {
+                font-weight: bold;
+            }
+        }
+        .refresh {
+            cursor: pointer;
+            text-align: right;
+            ion-icon {
+                width: 5vw;
+                height: 5vh;
+            }
+        }
+    }
+}

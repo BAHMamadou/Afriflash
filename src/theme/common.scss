@@ -1,0 +1,52 @@
+// Surcharge pour centrée les svgs
+.icon-inner, svg{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-inner.sc-ion-icon-md, svg.sc-ion-icon-md {
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+// Style du modal de la partie abonnement
+.my-custom-modal-css .modal-wrapper {
+    height: 90vh;
+    width: 75vw;
+}
+
+// Style du popover pour les notification - WEB
+.my-custom-popover-content .popover-content {
+    top: 9vh !important;
+    left: 48vw !important;
+    width: 50VW !important;
+}
+
+// MOBILE
+.my-custom-popover-content-mobile .popover-content {
+    top: 11vh !important;
+    left: 0vw !important;
+    width: 100vw !important;
+    right: 5vw !important;
+    bottom: 14vw !important;
+}
+
+// Style personnalisé des alerts
+.alert-wrapper {
+    min-width: 65vw !important;
+}
+
+.alert-radio-label {
+    font-size: 0.8rem !important;
+    overflow: auto !important;
+    text-overflow: clip !important;
+}
+
+
+
+

@@ -1,0 +1,197 @@
+
+.content-page {
+
+  background-color: var(--ion-color-background);
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+  font-family: Raleway;
+
+  &.content-page-mobile {
+    height: 85vh;
+  }
+
+  .first-part {
+    margin-top: 8vh;
+
+    .part-1 {
+      display: flex;
+      flex-direction: column;
+  
+      .button-recherche {
+        font-weight: bold;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem!important;
+        align-content: center;
+        //  width: max-content!important;
+        //  margin: 1rem;
+        //  padding: 1rem!important;
+      }
+
+      .button-recherche-mobile {
+        margin-left: 2vh;
+        margin-right: 2vh;
+        text-align: center;
+        width: auto;
+      }
+  
+      .search-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        .select {
+          margin-bottom: 1rem;
+  
+          select {
+            height: 3rem;
+            border-radius: 8px;
+          }
+        }
+  
+        .buton-title-search {
+          margin-top: 0.5vh;
+          font-size: 1.3rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 1rem;
+          background-color: var(--ion-color-principal);
+          color: white;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          width: 19rem;
+          margin-left: 2rem !important;
+          margin-right: 2rem !important;
+  
+          border-radius: 8px;
+        }
+  
+      }
+      .video-presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        iframe {
+          width: 37vw;
+          height: 40vh;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .video-presentation-mobile {
+        margin-top: 1rem;
+        iframe {
+          width: max-content;
+          height: max-content;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .search-publish-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .button-announce {
+            margin-bottom: 0.7rem;
+            margin-top: 1rem;
+        }
+
+      }
+    }
+  }
+  
+
+
+  .slide-block {
+    background-color: var(--ion-color-background);
+    width: 100% !important;
+
+    ion-slides {
+      background: #e6e6e6;
+      margin-right: 0!important;
+      margin-left: 0!important;
+      width: 100% !important;
+      ion-slide {
+        justify-content: space-between;
+        ion-col {
+          padding: 0;
+          margin: 0;
+          width: max-content;
+          height: max-content;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .custon-nav {
+      height: 48px;
+      width: 20px;
+      cursor: pointer;
+
+      vertical-align: middle;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .prev-icon-custom-web {
+      margin-left: 5rem!important;
+      background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll 0px 0px;
+    }
+    .prev-icon-custom-mobile {
+      background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll 0px 0px;
+    }
+
+    .prev-icon-custom.disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    .next-icon-custom {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll -32px 0px;
+    }
+
+    .next-icon-custom.disabled {
+      opacity: 0.4;
+      cursor: default;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .slider-nav {
+      margin: 0 !important;
+      padding: 0 !important;
+      ion-icon {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+      }
+    }
+
+    .slide-text {
+      margin: 0 !important;
+      padding: 0 !important;
+      position: absolute;
+      color: white;
+      bottom: 30px;
+    }
+  }
+
+
+  // .describe-test {
+  //   background-color: var(--ion-color-background);
+  //   font-weight: bold;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   margin-top: 2vh!important;
+  //   align-content: center;
+  // }
+}

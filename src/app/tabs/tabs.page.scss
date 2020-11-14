@@ -1,0 +1,22 @@
+.footer-page{
+    
+    .content-page{
+        background-color: var(--ion-color-footer);
+
+        .link{
+            color: black;
+            cursor: pointer;
+        }
+
+        .africlean{
+            color: black;
+        }
+
+        ion-tab-button{
+            background-color: var(--ion-color-footer);
+            color: black;
+        }
+    }
+  
+    
+}

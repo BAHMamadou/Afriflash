@@ -1,0 +1,228 @@
+<div class="content-page">
+
+  <div class="conteneur" *ngIf="annonceInformation" [ngClass]="{
+    'conteneur-mobile': isWeb === false
+  }">
+
+    <!-- Information liées à l'annonce -->
+    <div class="annonces-informations" [ngClass]="{
+      'annonces-informations-mobile': isWeb === false
+    }">
+
+        <!-- Les photos -->
+        <div class=" photos row form-inline m-0 slide-block" *ngIf="photos && photos.length !== 0">
+          <ion-col size="1">
+              <span class="slider-nav arrow-prev" (click)="slidePrev(sliderTwo,slideWithNav)">
+                  <div class="prev-icon-custom-web custon-nav web-style" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+                  <!-- <div *ngIf="!isWeb" class="prev-icon-custom-mobile custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div> -->
+              </span>
+          </ion-col>
+          <ion-col size="10">
+              <ion-slides #slideWithNav>
+                  <ion-slide *ngFor="let slide of sliderTwo.slidesItems">
+                          <ion-col>
+                            <div>
+                              <img src="{{ slide }}" alt="photo">
+                            </div>
+                          </ion-col>
+  
+                  </ion-slide>
+  
+              </ion-slides>
+  
+          </ion-col>
+  
+          <ion-col size="1">
+              <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav)">
+                  <div class="next-icon-custom custon-nav" [class.disabled]="sliderTwo.isEndSlide"></div>
+              </span>
+          </ion-col>
+          
+        </div>
+
+        <!-- Titre de l'annonce, prix, date publication -->
+        <div class="title-more" *ngIf="annonceInformation.annonce">
+            <div class="title">
+              {{ annonceInformation.annonce.annonceTitle }}
+            </div>
+
+            <div class="price" *ngIf="annonceInformation.annonce.price && 
+                                      annonceInformation.annonce.price.value && 
+                                      annonceInformation.annonce.price.devise">
+              {{ annonceInformation.annonce.price.value | customNumber }}
+              {{ annonceInformation.annonce.price.devise }}
+            </div>
+
+            <div class="creation-date">
+              {{ annonceInformation.creationDateCustomize }}
+            </div>
+        </div>
+
+        <div class="border"></div>
+
+        <!-- Critères -->
+        <div class="criteres">
+
+            <div class="title">
+              Critères
+            </div>
+
+            <div class="category-subcategory">
+                <div class="main-criteres row">
+                  <div class="category col x-lg-6" *ngIf="annonceInformation.annonce.category">
+                    <span>Catégorie : </span>
+                    {{ annonceInformation.annonce.category }}
+                  </div>
+
+                  <div class="sub-category col x-lg-6" *ngIf="annonceInformation.annonce.subCategory">
+                    <span>Sous-categorie : </span>
+                    {{ annonceInformation.annonce.subCategory }}
+                  </div>
+                </div>
+
+                <!-- Div dynamique en fonction de l'annonce -->
+                <div class="dynamic-criteres">
+
+                  <!-- IMMOBILIER -->
+                  <div class="row " *ngIf="annonceInformation.annonce.category === 'Immobilier'">
+                    <div class="col x-lg-6" *ngIf="annonceInformation.annonce.product.featureSize && 
+                                annonceInformation.annonce.product.featureMeasure">
+                      {{ annonceInformation.annonce.product.featureSize }} 
+                      <span> {{ annonceInformation.annonce.product.featureMeasure }} </span>
+                    </div>
+
+                    <div class="col x-lg-6" *ngIf="annonceInformation.annonce.product.nbElement && annonceInformation.annonce.product.nbElement !== ''">
+                      {{ annonceInformation.annonce.product.nbElement }} 
+                      <span *ngIf="annonceInformation.annonce.subCategory !== 'Terrain'"> 
+                        pièces 
+                      </span>
+                      <span *ngIf="annonceInformation.annonce.subCategory === 'Terrain'"> 
+                        parcelles 
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- SERVICES -->
+                  <div class="row " *ngIf="annonceInformation.annonce.category === 'Services'">
+                    <div class="col x-lg-6" *ngIf="annonceInformation.annonce.product.nameProduct">
+                      <span>Profession:</span> {{ annonceInformation.annonce.product.nameProduct }}
+                    </div>
+
+                    <div class="col x-lg-6" *ngIf="annonceInformation.annonce.product.statusProduct">
+                      <span>déplacement:</span> {{ annonceInformation.annonce.product.statusProduct }} 
+                    </div>
+                  </div>
+
+                  <!-- VEHICULES -->
+                  <div class="row " *ngIf="annonceInformation.annonce.category === 'Véhicules'">
+                    <div class="col x-lg-4" *ngIf="annonceInformation.annonce.product.nameProduct">
+                      <span>Marque:</span> {{ annonceInformation.annonce.product.nameProduct }}
+                    </div>
+
+                    <div class="col x-lg-4" *ngIf="annonceInformation.annonce.product.featureMeasure">
+                      {{ annonceInformation.annonce.product.featureMeasure }}
+                    </div>
+
+                    <div class="col x-lg-4" *ngIf="annonceInformation.annonce.product.featureSize">
+                      {{ annonceInformation.annonce.product.featureSize | customNumber }} <span>km</span>
+                    </div>
+
+                    <div class="col x-lg-6" *ngIf="annonceInformation.annonce.product.dateProduct">
+                      <span>Année :</span> {{ annonceInformation.annonce.product.dateProduct }}
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="border"></div>
+
+        <!-- Description -->
+        <div class="description" *ngIf="annonceInformation.annonce.description">
+
+          <div class="title">
+            Description
+          </div>
+
+          <div>
+            {{ annonceInformation.annonce.description }}
+          </div>
+
+        </div>
+
+    </div>
+
+    <!-- Contacts & localisation -->
+    <div class="contacts-locate" [ngClass]="{
+      'contacts-locate-mobile': isWeb === false
+    }">
+
+        <div class="contacts">
+
+            <div class="name-photo">
+
+              <div class="photo">
+                <i class="fas fa-user"></i>
+              </div>
+                
+              <div class="name" *ngIf="annonceInformation.informations.nameOrPseudo">
+                {{ annonceInformation.informations.nameOrPseudo }}
+                <span *ngIf="pro" class="pro">
+                  (Pro)
+                </span>
+              </div>
+
+            </div>
+
+            <div class="mail-number">
+              
+              <button class="mail btn btn-primary" *ngIf="annonceInformation.informations.mail && annonceInformation.informations.mail !== ''"
+                      (click)="sendMessage()">
+                Envoyer un message
+              </button>
+
+              <button class="number btn" [ngClass]="{
+                'btn-outline-primary': displayNumber !== 'Afficher le numéro',
+                'btn-primary': displayNumber === 'Afficher le numéro'
+              }" (click)="displayPhone()">
+
+                {{ displayNumber }}
+
+              </button>
+
+            </div>
+
+        </div>
+
+        <div class="border"></div>
+
+        <div class="locate" *ngIf="annonceInformation.adress">
+
+          <div class="country-city">
+
+            <div class="country">
+                <span>Pays : </span>
+                {{ annonceInformation.adress.country }}
+            </div>
+
+            <div class="city">
+                <span>Ville : </span>
+                {{ annonceInformation.adress.city }}
+            </div>
+
+          </div>
+
+          <div class="details">
+              {{ annonceInformation.adress.details }}
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>

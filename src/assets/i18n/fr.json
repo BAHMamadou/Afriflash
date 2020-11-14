@@ -1,0 +1,123 @@
+{
+    "APP": {
+        "NAME": "Afriflash",
+        "BACK": "Retour",
+        "CONNECT": "Se connecter",
+        "DISCONNECT": "Se déconnecter",
+        "SELECT_TRANSLATE": "Langue",
+        "DEFAULT_VALUE": "-"
+    },
+    "PAGES": {
+
+        "INFORMATIONS": {
+            "TITLE": "Informations",
+            "TOGGLE": {
+                "INFOS": "Mes informations",
+                "PASSWORD": "Mon mot de passe",
+                "ADRESS": {
+                    "TITLE": "Mes adresses",
+                    "NEW_ADRESS": "Ajouter une nouvelle adresse"
+                }
+            }
+        }
+
+
+    },
+
+    "COMPONENTS": {
+        "HEADER": {
+            "MENU": {
+                "LABEL1": "Publier une annonce",
+                "LABEL2": "Rechercher",
+                "LABEL3": "Mes annonces",
+                "LABEL4": "Contact",
+                "LABEL5": "Se connecter",
+                "LABEL6": "Se déconnecter",
+                "LABEL7": "Mon compte"
+            }
+        },
+
+        "SEARCH_AD": {
+
+            "SEARCH": {
+                "TITLE": "Recherche",
+                "PLACEHOLDER": "Que recherchez-vous ?"
+            },
+
+            "LOCATION": {
+                "TITLE": "Localisation"
+            },
+
+            "AD_TYPE": {
+                "TITLE": "Type d'annonce",
+                "CHOICE": {
+                    "BUY":"A vendre",
+                    "RENT":"A louer"
+                }
+            },
+
+            "PROPERTY_TYPE": {
+                "TITLE": "Type de bien",
+                "CHOOSE":"Choisissez un type de bien",
+                "HOUSE":"Maison",
+                "APPART":"Appartement",
+                "LAND":"Terrain",
+                "OFFICE_SHOP":"Bureau & Commerces",
+                "SURFACE": "Surface max en m²"
+            },
+
+            "PRICE": {
+                "TITLE": "Buget Maximum",
+                "CURRENCY": "Devise"
+            }
+        },
+
+        "ADS": {
+            "TITLE": "Annonces immobilières",
+            "SORT": {
+                "SORT_DATE_NEW": "Trier : annonces plus récentes",
+                "SORT_DATE_OLD": "Trier : annonces plus anciennes",
+                "SORT_PRICE_HIGH": "Trier : annonces plus chers",
+                "SORT_PRICE_LESS": "Trier : annonces moins chers"
+            },
+            "CHOICE": {
+                "PERSONNAL": "Personnel",
+                "PROFESSIONAL": "Professionnel"
+            },
+            "FOUND": "trouvées"
+        }
+    },
+
+
+    "INFO_BULLE": {
+        "EMPTY_FIELD": "Veuillez renseigner tous les champs obligatoires",
+        "AUTHENTICATION": {
+            "ERROR": {
+                "TEL": "Votre numéro de téléphone est incorrect",
+                "PASSWORD": "Votre mot de passe est incorrect",
+                "NO_USER": "Nous n'avons pas trouvé d'utilisateur correspondant à ce compte"
+            }
+        },
+        "REGISTRATION": {
+            "ERROR": {
+                "PSEUDO": "Le pseudo que vous avez choisi existe déja. choisissez un autre",
+                "TEL": "Votre numéro de téléphone est incorrect",
+                "PASSWORD": "Votre mot de passe doit contenir au moins 6 caractères",
+                "CONFIRM_PASSWORD": "Le mot de passe saisi n'est pas le même",
+                "EMAIL": "Votre mail n'est pas valide"
+            },
+            "INFO": {
+                "PASSWORD": "Au moins 6 caractères"
+            }
+        }
+
+    },
+
+    "FOOTER": {
+        "CONTACT_US": "Contactez-nous",
+        "CONDITIONS_USE": "Conditions d'utilisations",
+        "CONFIDENTIAL": "Politique de confidentialité",
+        "AFRIFlASH": "Suivez-nous",
+        "ADDRESS": "Kaporo Rails/Commune Ratoma  (Guinée)"
+    }
+}

@@ -1,0 +1,31 @@
+.content-page {
+
+  .filters-secondary {
+
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 3vh;
+    font-family: Raleway;
+
+    .nbr-results {
+      font-weight: bold;
+    }
+
+    .pro-particulier {
+      font-weight: bold;
+      width: 37vw;
+    }
+  }
+
+  .spinner {
+    text-align: center;
+    margin-top: 5vh;
+  }
+
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    margin-top: 3vh;
+  }
+}

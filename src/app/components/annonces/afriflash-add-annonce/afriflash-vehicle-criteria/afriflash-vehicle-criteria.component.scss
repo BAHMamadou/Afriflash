@@ -1,0 +1,16 @@
+.criteres {
+    font-weight: normal !important;
+    ion-item {
+        border: 1px solid var(--ion-color-principal);
+        box-shadow: 0 1px 0 #fff inset;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    ion-input[type=text], textarea {
+        border: 1px solid var(--ion-color-principal);
+        box-shadow: 0 1px 0 #fff inset;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

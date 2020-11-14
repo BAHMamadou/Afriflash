@@ -1,0 +1,63 @@
+.criteres {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  font-weight: normal !important;
+  margin-bottom: 1rem !important;
+  display: flex;
+
+  ion-item {
+    border: 1px solid var(--ion-color-principal);
+    box-shadow: 0 1px 0 #fff inset;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  ion-input[type=text], textarea {
+    font-weight: bold;
+    border: 1px solid var(--ion-color-principal);
+    box-shadow: 0 1px 0 #fff inset;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+    .surface-measure {
+      font-weight: normal;
+      width: 100%!important;
+      max-width: fit-content;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row;
+
+      .measure {
+        font-weight: normal;
+        width: 25% !important;
+        //margin-top: 2vh!important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        //margin-bottom: 2vh!important;
+
+      }
+
+      .surface {
+        width: 75% !important;
+      }
+
+    }
+
+    div {
+      font-weight: normal;
+      margin: 0!important;
+      padding: 0;
+
+      ion-select, ion-input {
+        height: 7vh !important;
+        border-color: var(--ion-color-principal) !important;
+        width: 35vw;
+        margin-right: 1vw;
+      }
+    }
+}

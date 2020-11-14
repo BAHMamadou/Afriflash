@@ -1,0 +1,74 @@
+<div class="container" [ngClass]="{
+    'width': isWeb == true
+}">
+
+    <div [ngClass]="{
+        'content-page-web': isWeb == true,
+        'content-page-mobile': isWeb == false
+    }">
+
+        <div class="image" *ngIf="!image" (click)="details()">
+            <!-- <img *ngIf="image" src="{{ image }}" alt="image"> -->
+            <ion-spinner name="bubbles" ></ion-spinner>
+        </div>
+        <img *ngIf="image" src="{{ image }}" alt="image" (click)="details()">
+
+        <div class="informations">
+
+            <div class="title" (click)="details()">
+                {{ annonceInformation.annonce.annonceTitle }}
+            </div>
+
+            <div class="price" (click)="details()"
+                 *ngIf="annonceInformation.annonce.price.value && annonceInformation.annonce.price.devise">
+                {{ annonceInformation.annonce.price.value | customNumber }}
+                {{ annonceInformation.annonce.price.devise }}
+            </div>
+
+            <!-- <div class="property-type">
+
+                <div class="property">
+                    {{ annonceInformation.annonce.propertyType }}
+                </div>
+
+                <div *ngIf="surface" class="surface">
+                    {{ surface }}
+                </div>
+
+                <div *ngIf="roomsNumber" class="rooms-number">
+                    {{ roomsNumber }} 5
+                </div>
+
+            </div> -->
+
+            <div class="ad-type" (click)="details()">
+                {{ annonceInformation.annonce.category }}
+                <span *ngIf="pro" class="pro">
+                    (Pro)
+                </span>
+            </div>
+
+
+            <div class="localisation-date">
+
+                <div class="localisation" (click)="details()">
+                    {{ annonceInformation.adress.country }} -
+                    {{ annonceInformation.adress.city }}
+                </div>
+
+                <div class="date">
+                    <span (click)="details()"> {{ annonceInformation.creationDateCustomize }}</span>
+                    <span class="icons" *ngIf="myadd">
+                        <ion-icon (click)="updateAnnonce()" name="create"></ion-icon>
+                        <ion-icon (click)="delateAnnonce()" name="trash"></ion-icon>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

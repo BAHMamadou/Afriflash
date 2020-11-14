@@ -1,0 +1,45 @@
+<div class="africhome-menu">
+
+    <!-- Bouton pour fermer le bouton -->
+    <div class="button-menu" (click)="closeMenu()">X</div>
+
+    <!-- Informations de base sur l'utilisateur  -->
+    <div *ngIf="status == 'connected'" class="header-content">
+        <!-- <ion-img class="profil" src="{{src}}" *ngIf="src"></ion-img> -->
+        <i class=" profil fas fa-user"></i>
+        <span class="name-user">{{user.name}}</span>
+        <div class="item" (click)="goToPage('/informations')">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL7' | translate }}</ion-label>
+        </div>
+        <div class="item" (click)="disconnect()">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL6' | translate }}</ion-label>
+        </div>
+    </div>
+
+    <!-- Pages accessibles depuis le menu -->
+    <ion-list>
+        <!-- Bouton pour publier une annonce  -->
+        <div class="item button-announce">
+            <afriflash-small-button [theme]="'orange'" [title]="'Publier une annonce'"
+                                    (clickButton)="goToPage('publish-annonce')">
+            </afriflash-small-button>
+        </div>
+        <!-- <div class="item" (click)="goToPage('/my-ads')">
+          <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL1' | translate }}</ion-label>
+        </div> -->
+        <div class="item search" (click)="goToPage('search-annonce')">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL2' | translate }}</ion-label>
+        </div>
+        <div class="item" (click)="goToMyAdd('my-annonces')">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL3' | translate }}</ion-label>
+        </div>
+        <!-- <div class="item" (click)="goToPage('/informations')">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL4' | translate }}</ion-label>
+        </div> -->
+        <div *ngIf="status == 'disconnected'" class="item log" (click)="goToLoginPage()">
+            <ion-label>{{ 'COMPONENTS.HEADER.MENU.LABEL5' | translate }}</ion-label>
+        </div>
+    </ion-list>
+
+</div>
+

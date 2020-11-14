@@ -1,0 +1,7 @@
+{
+  "name": "africlean-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

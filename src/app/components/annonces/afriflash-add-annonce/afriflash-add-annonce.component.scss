@@ -1,0 +1,231 @@
+.content-page {
+
+  .form {
+    // border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Raleway;
+
+    &.mobile-style {
+      width: max-content;
+      max-width: fit-content;
+      font-weight: bold;
+
+      .annonce-price {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+
+        .currency {
+          width: 25% !important;
+          //margin-top: 2vh!important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+
+        }
+
+        .price {
+          width: 75% !important;
+        }
+
+        div {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+
+          ion-select, ion-input {
+              height: 7vh!important;
+              border-color: var(--ion-color-principal) !important;
+          }
+        }
+      }
+
+      .annonce-phone {
+        margin-top: 2vh !important;
+        margin-bottom: 2vh;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        height: 100% !important;
+
+        .indicatif {
+          width: 20% !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          font-size: 14px!important;
+        }
+
+        .phone {
+          width: 80% !important;
+        }
+
+        div {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+
+          ion-select, ion-input {
+            font-weight: bold!important;
+            height: 7vh!important;
+              border-color: var(--ion-color-principal) !important;
+          }
+        }
+      }
+    }
+
+    &.web-style {
+      width: 43rem;
+    }
+
+    .space {
+      margin-top: 1.3rem;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1rem;
+      background-color: var(--ion-color-principal);
+      color: white;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .subtitle, .description-ad {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .choice-acount {
+      margin-top: 0.5rem;
+      display: flex;
+
+      div {
+        margin-right: 1rem;
+
+        ion-label {
+          margin-right: 0.4rem;
+        }
+      }
+    }
+
+    ion-item {
+      border: 1px solid var(--ion-color-principal);
+      box-shadow: 0 1px 0 #fff inset;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    ion-input[type=text], textarea {
+      border: 1px solid var(--ion-color-principal);
+      box-shadow: 0 1px 0 #fff inset;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .annonce-description, .details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .annonce-price {
+      font-weight: bold;
+      display: flex;
+      align-items: flex-end;
+
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-direction: row;
+
+      .currency {
+        width: 15% !important;
+        //margin-top: 2vh!important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+      }
+
+      .price {
+        width: 85% !important;
+      }
+
+      div {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+
+        ion-select, ion-input {
+            height: 7vh!important;
+            border-color: var(--ion-color-principal) !important;
+        }
+      }
+    }
+      .annonce-phone {
+
+          display: flex;
+          align-items: flex-end;
+          margin: 0 !important;
+          padding: 0 !important;
+          flex-direction: row;
+          font-weight: bold;
+
+        .indicatif {
+              width: 15% !important;
+              //margin-top: 2vh!important;
+              margin-right: 0 !important;
+              margin-left: 0 !important;
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+
+          }
+
+          .phone {
+              width: 85% !important;
+          }
+
+          div {
+              margin-left: 0;
+              margin-right: 0;
+              padding: 0;
+
+              ion-select, ion-input {
+                  height: 7vh!important;
+                  border-color: var(--ion-color-principal) !important;
+              }
+          }
+      }
+
+    .photos {
+      margin-top: 1rem;
+      display: flex;
+
+      div {
+        margin-right: 0.5rem;
+
+        img {
+          width: 3rem;
+        }
+      }
+
+      // et on masque le input
+      .input-file {
+        display: none;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,99 @@
+
+<ion-content #content>
+  
+  <div class="content-page">
+
+    <!-- FILTRES PRINCIPAUX-->
+    <div class="filters">
+
+       <app-afriflash-ad-filters [categoryDefault]="categoryDefault" (sendFilters)="getFilters($event)">
+
+       </app-afriflash-ad-filters>
+
+    </div>
+
+    <!-- FILTRES SECONDAIRE  -->
+    <div class="filters-secondary" *ngIf="annoncesTmp" [ngClass]="
+      {
+        'row': isWeb == true,
+        'col': isWeb == false
+      } "
+    >
+
+      <!-- Nombres d'annonces trouvées -->
+      <div class="nbr-results col x-lg-4 mr-0">
+        <span>Annonces : </span>
+        <span>{{ annoncesTmp.length }}</span>
+      </div>
+
+      <!-- Pro - Particulier -->
+      <div class="pro-particulier row x-lg-4 ml-3 mr-0">
+          <div [ngClass]="
+              {  
+                'col-6': isWeb == true,
+                '': isWeb == false
+              }
+            "
+          >
+              <input type="checkbox" (click)="handleCheckboxParticulier($event)"
+                     id="Particuliers" name="Particulier" value="Particulier" checked>
+              <ion-label  color='primary' position="stacked">
+                Particuliers
+              </ion-label>
+          </div>
+          <div  [ngClass]="
+              {  
+                'col-6': isWeb == true,
+                '': isWeb == false
+              }
+            "
+          >
+              <input type="checkbox" (click)="handleCheckboxPro($event)"
+                     id="Professionnels" name="Professionnel" value="Professionnel" checked>
+              <ion-label  color='primary' position="stacked">
+                Professionnels
+              </ion-label>
+          </div>
+
+      </div>
+      
+      <!-- TRI -->
+      <div class="location col x-lg-4" *ngIf="choicies">
+        <select #valueSelect 
+                (change)="getChoiceSecondFilter(valueSelect.value)">
+            <option value="Tri: Plus récentes" selected>
+              Tri: Plus récentes
+            </option>
+            <option *ngFor="let value of choicies" value="{{ value }}">
+              {{ value }}
+            </option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="spinner" [hidden]="hiddeSpinner">
+      <ion-spinner name="bubbles"></ion-spinner>
+    </div>
+
+    <!-- LISTES DES ANNONCES -->
+    <div class="annonces-list" *ngIf="annoncesTmp && hiddeSpinner === true">
+
+        <afriflash-ads [ads]="annoncesTmp" [itemsPerPage]="nbrAnnoncesPerPage" 
+                       [currentPage]="currentPage" (position)="getPosition($event)"
+                       (emitId)="moreDetails($event)">
+
+        </afriflash-ads>
+
+    </div>
+
+    <!-- PAGINATION -->
+    <!-- <div class="pagination" *ngIf="annoncesTmp && hiddeSpinner === true">
+        <app-afriflash-pagination [positions]="positions" (position)="getPosition($event)">
+
+        </app-afriflash-pagination>
+    </div> -->
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<div class="criteres">
+
+  <div class="profession">
+    <ion-label class="subtitle" for="profession">Profession</ion-label>
+    <ion-input id="profession" type="text" [(ngModel)]="profession"
+               (ionBlur)="sendData()">
+    </ion-input>
+  </div>
+  
+  <div class="you-are isMoving">
+
+    <div class="subtitle">Déplacement</div>
+
+    <div class="choice-acount">
+
+        <div class="particulier">
+            <ion-label for="Particulier">Oui</ion-label>
+
+            <input type="radio" id="yes" name="move" value="Oui" checked
+                   (click)="sendData()"/>
+        </div>
+
+        <div>
+            <ion-label for="no">Non</ion-label>
+
+            <input id="no" type="radio" name="move" value="Non"
+                   (click)="sendData()"/>
+
+        </div>
+
+    </div>
+</div>

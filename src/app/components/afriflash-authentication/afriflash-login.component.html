@@ -1,0 +1,102 @@
+<div class="container">
+    <!-- Fermeture de la modal -->
+    <div class="close" (click)="closeModal()">
+        X
+    </div>
+    <ion-item></ion-item>
+    <div *ngIf="connect">
+        <ion-item>
+            <ion-label>Connection</ion-label>
+        </ion-item>
+        <form class="col-md-12">
+
+            <div class="form-group mt-2">
+                <ion-input type="text" class="form-control input-lg" placeholder="Email ou telephone"
+                           [(ngModel)]="login" [ngModelOptions]="{standalone: true}"></ion-input>
+            </div>
+
+            <div class="form-group">
+                <ion-input class="form-control input-lg" placeholder="mot de pass" type="password"
+                           [(ngModel)]="password" [ngModelOptions]="{standalone: true}"></ion-input>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="connection()" type="submit">Se connecter</button>
+            </div>
+
+            <ion-item></ion-item>
+            <div class="row text-center">
+              <!--  <div class="col-md-4 col-sm-12">
+                    <button type="button" class="btn btn-primary btn-block social-logo"
+                            (click)="socialSignIn('facebook')"> Se connecter avec Facebook
+                    </button>
+                </div>-->
+
+                <div class="col-md-4 col-sm-12">
+                    <button (click)="socialSignIn('google')" type="button"
+                            class="btn btn-danger btn-block social-logo"> Se connecter avec Google+
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr/>
+        <ion-item style="font-size: 12px!important;">
+            Nouveau sur ce site ?
+            <ion-button (click)="signIn()">S'inscrire</ion-button>
+        </ion-item>
+        <hr/>
+
+    </div>
+    <div *ngIf="!connect">
+        <ion-item>
+            <ion-label>Inscription</ion-label>
+        </ion-item>
+        <form class="col-md-12">
+            <!-- <div class="form-group mt-2">
+                 <ion-input type="text" class="form-control input-lg" placeholder="votre nom"
+                            [ngModel]="nameSubscribe" [ngModelOptions]="{standalone: true}"></ion-input>
+             </div>-->
+
+            <div class="form-group mt-2">
+                <ion-input type="text" class="form-control input-lg" placeholder="votre nom"
+                           [(ngModel)]="nameSubscribe" [ngModelOptions]="{standalone: true}"></ion-input>
+            </div>
+
+            <div class="form-group mt-2">
+                <ion-input type="text" class="form-control input-lg" placeholder="Email ou telephone"
+                           [(ngModel)]="loginSubscribe" [ngModelOptions]="{standalone: true}"></ion-input>
+            </div>
+            <div class="form-group">
+                <ion-input class="form-control input-lg" placeholder="mot de pass" type="password"
+                           [(ngModel)]="passwordSubscribe" [ngModelOptions]="{standalone: true}"></ion-input>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="subscribe()">S'inscrire </button>
+            </div>
+            <hr/>
+            <div class="row text-center">
+               <!-- <div class="col-md-4 col-sm-12">
+                    <button type="button" class="btn btn-primary btn-block social-logo"
+                            (click)="socialSignIn('facebook')"> Se connecter avec Facebook
+                    </button>
+                </div>-->
+
+                <div class="col-md-4 col-sm-12">
+                    <button (click)="socialSignIn('google')" type="button"
+                            class="btn btn-danger btn-block social-logo"> Se connecter avec Google+
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <hr/>
+        <ion-item style="font-size: 12px!important;">
+            Déjà membre ?
+            <ion-button (click)="signIn()">Se connecter</ion-button>
+        </ion-item>
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,36 @@
+.content-page {
+
+    font-family: Raleway;
+    margin-top: 3vh;
+
+    .close {
+        font-size: 1.4rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: blue;
+        margin-right: 0.6rem;
+        margin-top: -1rem;
+      }
+
+    .form {
+
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+
+        ion-input[type=text], textarea {
+            border: 1px solid var(--ion-color-principal);
+            box-shadow: 0 1px 0 #fff inset;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            display: inline-grid;
+        }
+
+        .alert {
+            width: 70vw;
+        }
+    }
+}

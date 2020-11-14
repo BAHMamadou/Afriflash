@@ -1,0 +1,32 @@
+<div class="content-page">
+
+  <div class="filter">
+
+    <!-- Premier Filtre -->
+    <ion-item *ngIf="filters">
+      <ion-label>Filtre 1</ion-label>
+      <ion-select (ionChange)="getFilter($event, 'filter1')">
+        <ion-select-option *ngFor="let filter of filters" value="{{ filter.filter1 }}">
+          {{ 'COMPONENTS.AFRICLEAN_FILTERS.SORT' | translate }} 
+          {{ filter.filter1 }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Deuxiéme filtre  -->
+    <ion-item  *ngIf="filters2">
+      <ion-label>Filtre 2</ion-label>
+      <ion-select *ngIf="filters2" (ionChange)="getFilter($event, 'filter2')">
+        <ion-select-option *ngFor="let value of filters2" value="{{ value }}">
+          {{ value }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="refresh" (click)="refresh()">
+      <ion-icon src="./assets/icon/refresh-outline.svg" alt="icon" class="icon-button"></ion-icon>
+    </div>
+    
+  </div>
+
+</div>

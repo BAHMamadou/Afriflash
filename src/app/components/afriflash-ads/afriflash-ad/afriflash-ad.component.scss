@@ -1,0 +1,162 @@
+$color-shadow: #e6ebef;
+
+.container{
+
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+
+    .pro{
+        font-weight: bold;
+    }
+
+    &.width {
+        width: max-content;
+
+        .content-page-web{
+
+            display: flex;
+            width: 60vw;
+            // margin-left: 3rem;
+            box-shadow: 1px 1px 8px 1px $color-shadow;
+            border-radius: .5rem;
+
+            .image {
+                width: 9rem;
+                height: auto;
+                border-radius: .5rem;
+                background-color: grey;
+
+                ion-spinner {
+                    margin-top: 9vh;
+                    width: inherit;
+                    color: white;
+                }
+            }
+
+            img {
+                width: 9rem;
+                height: auto;
+                border-radius: .5rem;
+            }
+
+            .informations{
+                margin-left: 0.8rem;
+
+                .title{
+                    font-weight: bold;
+                }
+
+                .price{
+                    color: var(--ion-color-secondary);
+                }
+
+                .property-type{
+                    display: flex;
+
+                    div{
+                        margin-right: 0.4rem;
+                    }
+                }
+
+                .localisation-date{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0.5rem;
+                    
+                    .date {
+                        display: flex;
+                        .icons {
+                            font-size: larger;
+                            position: absolute;
+                            margin-left: 38vw;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .content-page-mobile{
+
+        display: flex;
+        max-width: inherit;
+        margin-right: 2vh;
+        margin-left: -2vh;
+        box-shadow: 1px 1px 8px 1px $color-shadow;
+        border-radius: .5rem;
+
+        .image{
+            width: 9rem;
+            height: auto;
+            border-radius: .5rem;
+            background-color: grey;
+            ion-spinner {
+                margin-top: 7vh;
+                width: inherit;
+                color: white;
+            }
+        }
+
+        img {
+            width: 9rem;
+            height: auto;
+            border-radius: .5rem;
+        }
+
+        .informations{
+            margin-left: 0.8rem;
+
+            .title{
+                font-weight: bold;
+            }
+
+            .price{
+                color: var(--ion-color-secondary);
+            }
+
+            .property-type{
+                display: flex;
+
+                div{
+                    margin-right: 0.4rem;
+                }
+            }
+
+            .localisation-date{
+                display: flex;
+                flex-direction: column;
+                margin-top: 0.5rem;
+
+                .date {
+                    display: flex;
+                    .icons {
+                        font-size: larger;
+                        position: absolute;
+                        margin-left: 43vw;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.container:hover {
+    .title{
+        color: var(--ion-color-secondary);
+    }
+}
+
+
+ion-icon[name="trash"]{
+    cursor: pointer;
+    color: red;
+    margin: auto;
+}
+
+ion-icon[name="create"]{
+    cursor: pointer;
+    color: var(--ion-color-secondary);
+    margin: auto;
+}

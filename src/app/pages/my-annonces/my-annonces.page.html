@@ -1,0 +1,24 @@
+
+<ion-content>
+
+  <div class="content-page">
+
+    <!-- Spinner -->
+    <div class="spinner" [hidden]="hiddeSpinner">
+      <ion-spinner name="bubbles"></ion-spinner>
+    </div>
+
+    <!-- LISTES DES ANNONCES -->
+    <div class="annonces-list" *ngIf="annoncesTmp && hiddeSpinner === true">
+
+      <afriflash-ads [ads]="annoncesTmp" [itemsPerPage]="nbrAnnoncesPerPage"
+                     [currentPage]="currentPage" [myadd]="true"
+                     (position)="getPosition($event)" (emitId)="moreDetails($event)">
+
+      </afriflash-ads>
+
+    </div>
+
+  </div>
+
+</ion-content>

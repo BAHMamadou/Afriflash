@@ -1,0 +1,24 @@
+<!-- Bouton secondaire de africlean -->
+<div 
+  class="africlean-small-button"
+  (click)="clickButton.emit()"
+  [ngClass]="{
+    'style-button-blue':theme == 'blue',
+    'style-button-orange': theme == 'orange',
+    'style-button-abonnement': theme == 'abonnement',
+    'style-button-incident': theme == 'incident',
+    'style-button-btn-blue': theme == 'btn-blue',
+    'style-button-grey': theme == 'grey',
+    'style-button-btn-orange': theme == 'btn-orange'
+
+  }">
+
+  <div class="content-button">
+    <!-- Texte du bouton -->
+    <div class="text-div">
+        {{ title }}
+    </div>
+    
+  </div>
+  
+</div>

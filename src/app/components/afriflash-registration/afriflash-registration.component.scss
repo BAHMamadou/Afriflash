@@ -1,0 +1,62 @@
+.content-page{
+
+    .header {
+        margin-bottom: -2rem;
+        span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            span {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .tab-menu {
+
+        display: flex;
+        width: min-content;
+        margin-left: auto;
+        margin-right: auto;
+
+        .tab-button {
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.3rem;
+            cursor: pointer;
+    
+            .text {
+                color: var(--ion-color-primary);
+                margin-top: 0.5rem;
+                font-size: 1.1rem;
+            }
+    
+            &.actif {
+    
+                .arrow {
+                    fill: var(--ion-color-primary);
+                }
+                .text {
+                    color: var(--ion-color-primary);
+                }
+                
+            }
+    
+            &.inactif {
+    
+                .text {
+                    color: var(--ion-color-black);
+                }
+            }   
+        }
+    
+    }
+    
+}

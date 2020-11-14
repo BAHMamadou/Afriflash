@@ -1,0 +1,33 @@
+.container{
+
+    .content-page{
+        margin-top: 15vh;
+        
+        .header{
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            padding-left: 0.5rem;
+            border-bottom: 1px solid;
+            border-color: var(--ion-color-grey);
+            color: var(--ion-color-principal);
+        }
+
+        .toggle{
+
+            ion-label{
+                color: var(--ion-color-principal);
+                font-weight: bold;
+            }
+
+            .adress-add{
+                color: var(--ion-color-principal);
+                text-decoration: underline;
+                cursor: pointer;
+                font-size: 0.9rem;
+                margin-left: 5vw;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

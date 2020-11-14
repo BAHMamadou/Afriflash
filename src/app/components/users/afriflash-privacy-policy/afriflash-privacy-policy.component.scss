@@ -1,0 +1,40 @@
+
+.container {
+
+  position: relative;
+  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+
+  .content-page {
+
+    height: auto !important;
+    padding-bottom: 0rem !important;
+    font-family: Raleway;
+
+    .close {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: right;
+      cursor: pointer;
+      color: blue;
+    }
+
+    .title-block {
+      margin-top: 2vh;
+      font-size: 0.8rem;
+      font-style: normal;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+
+    }
+    .link-style {
+      color: blue; font-style: italic
+    }
+    .text-block-style {
+      font-size: 0.7rem!important;
+      font-family: Raleway;
+    }
+  }
+}

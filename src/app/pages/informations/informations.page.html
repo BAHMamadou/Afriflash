@@ -1,0 +1,44 @@
+<ion-content class="container">
+
+    <div  class="content-page">
+
+        <div class="header">
+            {{ 'PAGES.INFORMATIONS.TITLE' | translate }}
+        </div>
+
+        <div class="toggle">
+
+            <!-- Informations personnelles -->
+            <ion-item class="informations-toggle">
+                <ion-label>{{ 'PAGES.INFORMATIONS.TOGGLE.INFOS' | translate }}</ion-label>
+                <ion-toggle color="medium" (ionChange)="toggleInformations($event)">
+                </ion-toggle>
+            </ion-item>
+
+            <div class="informations" *ngIf="informationsCheck">
+                <afriflash-informations [isCanModified]="isCanModified"></afriflash-informations>
+            </div>
+
+            <!-- Adresses -->
+            <!-- <ion-item class="adress-toggle">
+              <ion-label>{{ 'PAGES.INFORMATIONS.TOGGLE.ADRESS.TITLE' | translate }}</ion-label>
+              <ion-toggle color="medium" (ionChange)="toggleAdress($event)">
+              </ion-toggle>
+            </ion-item> -->
+
+
+            <!-- Mot de passe -->
+            <ion-item class="password-toggle" *ngIf="isCanModified">
+                <ion-label>{{ 'PAGES.INFORMATIONS.TOGGLE.PASSWORD' | translate }}</ion-label>
+                <ion-toggle color="medium" (ionChange)="togglePassword($event)">
+                </ion-toggle>
+            </ion-item>
+
+            <div class="password" *ngIf="pwdCheck && isCanModified">
+                <afriflash-password [user]="user"></afriflash-password>
+            </div>
+
+        </div>
+    </div>
+
+</ion-content>

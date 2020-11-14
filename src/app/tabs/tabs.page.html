@@ -1,0 +1,21 @@
+<ion-tabs class="footer-page">
+
+        <!-- Bottom menu de l'application  (affiché sur toutes les pages) -->
+        <ion-tab-bar class="content-page" slot="bottom">
+      
+          <ion-tab-button (click)="contactUs()">
+            <ion-label class="link">{{ 'FOOTER.CONTACT_US' | translate }}</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="conditionsUse()">
+            <ion-label class="link">{{ 'FOOTER.CONDITIONS_USE' | translate }}</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button>
+            <ion-label class="africlean">{{ 'FOOTER.AFRICLEAN' | translate }}</ion-label>
+          </ion-tab-button>
+          
+      
+        </ion-tab-bar>
+      
+</ion-tabs>

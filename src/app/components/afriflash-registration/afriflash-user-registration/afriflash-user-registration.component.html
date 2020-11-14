@@ -1,0 +1,339 @@
+<div class="container" scrollY="true">
+
+    <div class="content-page">
+
+         <!-- Fermeture de la modal -->
+        <div class="close" *ngIf="source != 'registration'" (click)="closeModal()">
+            X
+        </div>
+        <ion-grid class="formulaire">
+
+            <ion-row class="gender">
+
+                <!-- Genre de l'utilisateur -->
+                <ion-col size="12">
+                    <ion-grid>
+                        <ion-col size="12">
+                            <ion-label *ngIf="source == 'registration'" color='primary' position="stacked">
+                                {{ 'COMPONENTS.REGISTRATION.LABELS.GENDER.TITLE' | translate }} *
+                            </ion-label>
+                        </ion-col>
+
+                        <ion-col size="12" class="choice">
+                                <div>
+                                    <input type="radio" id="Homme" name="gender" 
+                                    value="Homme" (click)="getGender('Homme')" checked>
+                                    <label for="Homme">
+                                        {{ 'COMPONENTS.REGISTRATION.LABELS.GENDER.MAN' | translate }}
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="Femme" name="gender" 
+                                    value="Femme" (click)="getGender('Femme')" >
+                                    <label for="Femme">
+                                        {{ 'COMPONENTS.REGISTRATION.LABELS.GENDER.WOMEN' | translate }} *
+                                    </label>
+                                </div>
+                        </ion-col>
+                    </ion-grid>
+                </ion-col>
+
+            </ion-row>
+            <!-- role de l'utilisateur -->
+            <div *ngIf="userType == 'employe'">
+                <ion-row>
+                 <ion-col size="12" >
+                    <ion-grid>
+                            <ion-col size="12" class="choice">
+                                <div>
+                                    <input type="radio" id="INTERVENANT" name="role"
+                                           value="INTERVENANT" (click)="getUserType('INTERVENANT')" checked>
+                                    <label for="INTERVENANT">
+                                        {{ 'COMPONENTS.REGISTRATION.LABELS.USERTYPE.INTERVENANT' | translate }} *
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="COMMERCIAL" name="role"
+                                           value="COMMERCIAL" (click)="getUserType('COMMERCIAL')" >
+                                    <label for="COMMERCIAL">
+                                        {{ 'COMPONENTS.REGISTRATION.LABELS.USERTYPE.COMMERCIAL' | translate }} *
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="MANAGER" name="role"
+                                           value="MANAGER" (click)="getUserType('MANAGER')">
+                                    <label for="MANAGER">
+                                        {{ 'COMPONENTS.REGISTRATION.LABELS.USERTYPE.MANAGER' | translate }}
+                                    </label>
+                                </div>
+
+                            </ion-col>
+                    </ion-grid>
+
+                 </ion-col>
+                </ion-row>
+            </div>
+
+            <!-- Champ nom -->
+            <ion-row>
+
+                    <ion-col size="12">
+    
+                        <ion-grid>
+                            <ion-col size="12">
+                                <ion-grid>
+    
+                                </ion-grid>
+                                <ion-label color='primary' position="stacked">
+                                    {{ 'COMPONENTS.REGISTRATION.LABELS.LAST_NAME' | translate }} *
+                                </ion-label>
+                            </ion-col>
+    
+                            <ion-col size="12">
+                                <div>
+                                    <ion-input clearInput [(ngModel)]="lastName" type='text'>
+                                    </ion-input>
+                                </div>
+                            </ion-col>
+                        </ion-grid>
+                    </ion-col>
+    
+            </ion-row>
+
+            <!-- champ prénom -->
+            <ion-row>
+
+                <ion-col size="12">
+
+                    <ion-grid>
+                        <ion-col size="12">
+                            <ion-grid>
+
+                            </ion-grid>
+                            <ion-label color='primary' position="stacked">
+                                {{ 'COMPONENTS.REGISTRATION.LABELS.FIRST_NAME' | translate }} *
+                            </ion-label>
+                        </ion-col>
+
+                        <ion-col size="12">
+                            <div>
+                                <ion-input clearInput [(ngModel)]="firstName" type='text'>
+                                </ion-input>
+                            </div>
+                        </ion-col>
+                    </ion-grid>
+                </ion-col>
+
+            </ion-row>
+
+            <!-- Champ Numéro de téléphone -->
+            <ion-row>
+
+                <ion-col size="12">
+
+                    <ion-grid>
+                        <ion-col size="12">
+                            <ion-grid>
+
+                            </ion-grid>
+                            <ion-label color='primary' position="stacked">
+                                {{ 'COMPONENTS.REGISTRATION.LABELS.PHONE' | translate }} *
+                            </ion-label>
+                        </ion-col>
+
+                        <ion-col size="12">
+                            <div>
+                                <ion-input clearInput [(ngModel)]="phone" type='text'>
+                                </ion-input>
+                            </div>
+                        </ion-col>
+                    </ion-grid>
+                </ion-col>
+
+            </ion-row>
+
+            <!-- Champ date de naissance -->
+            <ion-row>
+
+                <ion-col size="12">
+
+                    <ion-grid>
+                        <ion-col size="12">
+                            <ion-grid>
+
+                            </ion-grid>
+                            <ion-label color='primary' position="stacked">
+                                {{ 'COMPONENTS.REGISTRATION.LABELS.BIRTHDAY' | translate }} *
+                            </ion-label>
+                        </ion-col>
+
+                        <ion-col size="12">
+                            <div class="birthday">
+                                <ion-datetime  (ionChange)="getDate($event)" placeholder="Selectionner la date">
+
+                                </ion-datetime>
+                            </div>
+                        </ion-col>
+                    </ion-grid>
+                </ion-col>
+
+            </ion-row>
+            
+            <!-- Champ email -->
+            <ion-row>
+
+                <ion-col size="12">
+
+                    <ion-grid>
+                        <ion-col size="12">
+                            <ion-grid>
+
+                            </ion-grid>
+                            <ion-label color='primary' position="stacked">
+                                {{ 'COMPONENTS.REGISTRATION.LABELS.EMAIL' | translate }} 
+                            </ion-label>
+                        </ion-col>
+
+                        <ion-col size="12">
+                            <div>
+                                <ion-input clearInput [(ngModel)]="email" type='text'>
+                                </ion-input>
+                            </div>
+                        </ion-col>
+                    </ion-grid>
+                </ion-col>
+
+            </ion-row>
+
+            <!-- Champ de mot de passe -->
+            <div *ngIf="action != 'update'">
+
+                <ion-row>
+
+                    <ion-col size="12">
+                        <ion-grid>
+                            <ion-col size="12">
+                                <ion-label color='primary' position="stacked">
+                                    {{ 'COMPONENTS.REGISTRATION.LABELS.PASSWORD' | translate }} *
+                                </ion-label>
+                            </ion-col>
+
+                            <ion-col size="12">
+                                <div>
+                                    <ion-input clearInput placeholder="{{passwordPlaceholder}}"
+                                               [(ngModel)]="password" type='password'>
+                                    </ion-input>
+                                </div>
+                            </ion-col>
+                        </ion-grid>
+                    </ion-col>
+
+                </ion-row>
+
+                <!-- Champ de confirmation du mot de passe -->
+                <ion-row>
+
+                    <ion-col size="12">
+                        <ion-grid>
+                            <ion-col size="12">
+                                <ion-label color='primary' position="stacked">
+                                    {{ 'COMPONENTS.REGISTRATION.LABELS.CONFIRM_PASSWORD'
+                                    | translate
+                                    }} *
+                                </ion-label>
+                            </ion-col>
+
+                            <ion-col size="12">
+                                <div>
+                                    <ion-input clearInput [(ngModel)]="confirmPassword" type='password'>
+                                    </ion-input>
+                                </div>
+                            </ion-col>
+                        </ion-grid>
+                    </ion-col>
+
+                </ion-row>
+
+            </div>
+                
+            <!-- Bouton d'inscription -->
+         <div *ngIf="userType != 'employe' && action=='create'">
+             <ion-row>
+
+                 <ion-col size="12">
+
+                     <div class="separate"></div>
+
+                     <afriflash-small-button [theme]="'orange'" [title]="'PAGES.REGISTRATION.CREATE_MY_ACOUNT' | translate"
+                                             (clickButton)="registration()">
+                     </afriflash-small-button>
+
+                 </ion-col>
+
+             </ion-row>
+         </div>
+
+            <div *ngIf="userType == 'employe' && action == 'create'">
+                <ion-row>
+
+                    <ion-col size="12">
+
+                        <div class="separate"></div>
+
+                        <afriflash-small-button [theme]="'orange'" [title]="'PAGES.REGISTRATION.CREATE_EMPLOYE' | translate"
+                                                (clickButton)="registration()">
+                        </afriflash-small-button>
+
+                    </ion-col>
+
+                </ion-row>
+            </div>
+
+            <div *ngIf="action == 'update'">
+                <ion-row>
+
+                    <ion-col size="12">
+
+                        <div class="separate"></div>
+
+                        <afriflash-small-button [theme]="'orange'" [title]="'PAGES.REGISTRATION.CREATE_EMPLOYE' | translate"
+                                                (clickButton)="updateUser()">
+                        </afriflash-small-button>
+
+                    </ion-col>
+
+                </ion-row>
+                <br>
+
+                <div>
+                    <!-- Mot de passe -->
+                    <ion-item class="password-toggle">
+                        <ion-label>{{ 'PAGES.INFORMATIONS.TOGGLE.PASSWORD' | translate }}</ion-label>
+                        <ion-toggle color="medium" (ionChange)="togglePassword($event)">
+                        </ion-toggle>
+                    </ion-item>
+
+                    <div class="password" *ngIf="pwdCheck">
+                        <afriflash-password
+                                [user]="userUpdate">
+                        </afriflash-password>
+                    </div>
+                </div>
+            </div>
+
+        </ion-grid>
+
+        <!-- Gestion des erreurs -->
+        <div text-center>
+            <ion-spinner [hidden]='hideSpinner'></ion-spinner>
+        </div>
+        <afriflash-info-bulle *ngIf='errorMsg' [type]="'error'"
+                               [message]="errorMsg">
+
+        </afriflash-info-bulle>
+        
+    </div>
+      
+</div>

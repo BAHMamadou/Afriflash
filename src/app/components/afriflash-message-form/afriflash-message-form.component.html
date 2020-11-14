@@ -1,0 +1,46 @@
+<div class="content-page">
+    <!-- Fermeture de la modal -->
+    <div class="close" (click)="closeModal()">
+      X
+    </div>
+    <div class="form">
+
+        <!-- Nom de l'utilisateur -->
+        <div class="user-name">
+          <ion-label class="label" for="user-name">Votre nom *</ion-label>
+          <ion-input id="user-name" type="text" [(ngModel)]="userName"></ion-input>
+        </div>
+
+        <!-- Adresse mail -->
+        <div class="email">
+          <ion-label class="label" for="email">Votre mail *</ion-label>
+          <ion-input id="email" type="text" [(ngModel)]="email"></ion-input>
+        </div>
+
+        <div class="message">
+          <ion-label class="title" for="message">Votre message *</ion-label>
+          <textarea id="message" name="message" rows="5" cols="33"
+                    (change)="handleMessage($event)"></textarea>
+        </div>
+
+        <!-- Bouton pour envoyer le message  -->
+        <div class="send-mail">
+          <div class="process-form">
+              <ion-spinner class="spinner" name="bubbles" *ngIf="displaySpinner && !errorMsg"></ion-spinner>
+              <div *ngIf="errorMsg && errorMsg != ''" class="alert alert-danger">
+                  {{ errorMsg }}
+              </div>
+              <div *ngIf="successMsg && successMsg != ''" class="alert alert-success">
+                {{ successMsg }}
+            </div>
+          </div>
+          <button *ngIf="annonce && annonce.informations" 
+                   class="btn btn-primary" (click)="sendMessage()">
+              Envoyer à <strong> {{ annonce.informations.mail }} </strong>
+          </button>
+      </div>
+
+    </div>
+
+
+</div>

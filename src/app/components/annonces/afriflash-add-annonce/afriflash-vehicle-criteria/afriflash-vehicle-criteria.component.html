@@ -1,0 +1,35 @@
+<div class="criteres">
+  
+  <ion-item id="marque" *ngIf="marques">
+    <ion-label class="subtitle">Marque</ion-label>
+    <ion-select (ionBlur)="sendData()" [(ngModel)]="marque">
+      <ion-select-option *ngFor="let marque of marques" value="{{ marque }}">
+        {{ marque | titlecase }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div class="modele">
+    <ion-label class="subtitle" for="modele">Modèle</ion-label>
+    <ion-input id="modele" type="text" [(ngModel)]="modele"
+              (ionBlur)="sendData()">
+
+    </ion-input>
+  </div>
+
+  <div class="circulationDate">
+    <ion-label class="subtitle" for="circulationDate">Année mise en circulation</ion-label>
+    <ion-input id="circulationDate" type="text" [(ngModel)]="yearCirculation"
+              (ionBlur)="sendData()">
+
+    </ion-input>
+  </div>
+
+  <div class="kilometrage">
+    <ion-label class="subtitle" for="city">Kilométrage</ion-label>
+    <ion-input id="kilometrage" type="text" [(ngModel)]="kilometrage"
+              (ionBlur)="sendData()">
+
+    </ion-input>
+  </div>
+</div>

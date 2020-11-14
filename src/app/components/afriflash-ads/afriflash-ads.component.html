@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="content-page">
+
+    <div [ngClass]="{
+        'head-web': isWeb == true,
+        'head-mobile': isWeb == false
+      }">
+
+      <ion-spinner name="bubbles" *ngIf="ads == null"></ion-spinner>
+      
+      <div  *ngIf="ads != null">
+          <div class="annonce-style" *ngFor="let ad of ads | paginate: 
+                                            { 
+                                               itemsPerPage: itemsPerPage, 
+                                               currentPage: currentPage
+                                            }">
+            <afriflash-ad [annonceInformation]="ad" [myadd]="myadd" (clickAd)="moreDetails($event)">
+
+            </afriflash-ad>
+          </div>
+      </div>
+
+    </div>          
+    <div class="pagination-controls" [ngClass]="{
+      'pagination-controls-mobile-style': isWeb === false
+    }">
+        <pagination-controls (pageChange)="sendPosition($event)" 
+                              previousLabel = ""
+                              nextLabel = "">
+
+        </pagination-controls>
+    </div>
+  
+  </div>
+
+</div>

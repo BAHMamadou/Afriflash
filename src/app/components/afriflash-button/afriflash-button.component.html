@@ -1,0 +1,10 @@
+<!-- Bouton de base de africlean -->
+<div class="africlean-button" (click)="clickButton.emit()">
+  <div  [ngClass]="{'web-style' : isWeb == true,'mobile-style' : isWeb == false}">
+    <div class="card content-button m-0">
+      <span class="title">{{title}}</span>
+      <!-- Icone du bouton -->
+      <ion-icon *ngIf="icon" src="./assets/icon/{{ icon }}.svg" alt="icon" class="icon-button"></ion-icon>
+    </div>
+  </div>
+</div>

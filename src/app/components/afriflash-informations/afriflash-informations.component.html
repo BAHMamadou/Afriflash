@@ -1,0 +1,29 @@
+<div class="content-page">
+
+    <div class="form" *ngIf="user">
+
+        <ion-item>
+            <ion-input clearInput [disabled]="disabled" value="{{user.name}}"
+                       (ionChange)="getData('name',$event)">
+
+            </ion-input>
+            <ion-input clearInput [disabled]="disabled" value="{{user.email}}"
+                       (ionChange)="getData('email',$event)">
+
+            </ion-input>
+
+        </ion-item>
+
+        <div class="message" *ngIf="message" [ngClass]="{
+          'alert alert-success': message === 'Données modifiées avec succés',
+          'alert alert-danger': message === 'Veuillez remplir correctement les champs'}">
+            {{ message }}
+        </div>
+
+        <div class="update" *ngIf="disabled && isCanModified" (click)="able()">Modifier</div>
+
+        <div class="update"  *ngIf="!disabled && isCanModified" (click)="update()">Valider</div>
+
+    </div>
+
+</div>

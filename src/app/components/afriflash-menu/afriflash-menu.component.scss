@@ -1,0 +1,116 @@
+$font-size-h1: 1.5rem;
+
+.africhome-menu {
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ion-color-primary);
+    height: 100vh;
+
+    .button-menu {
+        margin: 1rem;
+        height: 2vh;
+        font-size: 2.5vh;
+        fill: var(--ion-color-white);
+        align-self: flex-end;
+        cursor: pointer;
+        font-family: Raleway;
+        font-weight: bold;
+    }
+
+    .header-content {
+
+        display: flex;
+        flex-direction: column;
+        vertical-align: middle;
+        align-items: center;
+        height: 30vh;
+        min-height: 10rem;
+
+        .profil {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            width: 3rem;
+        }
+    
+        .name-user {
+            font-size: $font-size-h1;
+            color: var(--ion-color-white);
+            font-weight: bold;
+        }
+    
+        .mail-user {
+            color: var(--ion-color-white);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    ion-list {
+        width: 100%;
+        height: 60vh;
+        overflow-y: auto;
+        background-color: transparent;
+        
+        .item {
+            display: flex;
+            flex-direction: row;
+            vertical-align: middle;
+            align-items: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+            position: relative;
+            padding-left: 2.5rem;
+            transform: translateX(-0.5rem);
+            transition: all 0.5s ease-out;
+            font-family: Raleway;
+
+            &.search {
+                font-size: 1.4rem;
+                font-family: raleway;
+            }
+
+            &.log {
+                font-style: italic;
+            }
+            
+            &.button-announce{
+                margin-left: 1vw;
+            }
+
+            &:hover{
+                transform: translateX(0rem);
+                transition: all 0.5s ease-out;
+            }
+
+            ion-icon{
+                font-size: 2rem;
+            }
+            ion-label {
+                padding-left: 1rem;
+                color: var(--ion-color-white);
+            }
+        }
+    }
+
+    .footer-menu {
+        height: 5vh;
+        min-height: 3rem;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+
+        .disconnected-button {
+            color: var(--ion-color-white);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        label{
+            color: var(--ion-color-white);
+            margin-right: 0.3rem;
+        }
+    }
+    
+}

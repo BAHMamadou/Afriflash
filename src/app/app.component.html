@@ -1,0 +1,73 @@
+<ion-app>
+  <!-- Header de l'application -->
+  <afriflash-header
+        [shadow]="true"
+        [icon]="'burger-menu-button-blue'"
+        [logo]="'logo'"
+        [notification]="'notifications'"
+        [home]="'home'"
+        (clickButton)="menuOpening()">
+  </afriflash-header>
+
+  <!-- Menu de l'application -->
+  <ion-menu id="menu" side="start" type="overlay" 
+    (ionWillOpen)="menuChanging(true)" 
+    (ionWillClose)="menuChanging(false)" 
+    (ionDidClose)="menuChanging(false)"
+    (ionDidOpen)="menuChanging(true)">
+    <afriflash-menu></afriflash-menu>
+  </ion-menu>
+  
+  <!-- Main content -->
+  <ion-router-outlet main [ngClass]="{'blur' : stateMenu, 'no-blur': !stateMenu }"></ion-router-outlet>
+
+  <ion-tabs class="footer-page">
+
+    <!-- Bottom menu de l'application  (affiché sur toutes les pages) -->
+    <ion-tab-bar class="content-page" slot="bottom">
+
+      <div class="contact-info" (click)="contactUs()">
+        <ion-label class="link">{{ 'FOOTER.CONTACT_US' | translate }}</ion-label>
+        <ion-label class="contact">afriflash@gmail.com</ion-label>
+        <ion-label class="contact">+224 626853272</ion-label>
+      </div>
+
+      <div class="social-info">
+        <ion-label class="link">{{ 'FOOTER.AFRIFlASH' | translate }}</ion-label>
+          <ion-label class="row social">
+           <div class="mx-1 icon">
+             <a href="https://www.youtube.com/channel/UCgjCQXTvUKmpKjxXSwlmB3Q/videos?view_as=subscriber">
+               <i class="fab fa-youtube-square"></i>
+             </a>
+           </div>
+           <div class="mx-1 icon">
+             <a href="https://mail.google.com/mail/u/0/#inbox">
+               <i class="fab fa-facebook-square"></i>
+             </a>
+           </div>
+          <div class="mx-1 icon">
+            <a href="https://mail.google.com/mail/u/0/#inbox">
+            <i class="fab fa-instagram"></i></a>
+          </div>
+          </ion-label>
+          <ion-label class="adress">{{ 'FOOTER.ADDRESS' | translate }}</ion-label>
+
+      </div>
+
+      <div class="conditions-use">
+        <ion-label class="use-conditions" (click)="conditionsUse()">{{ 'FOOTER.CONDITIONS_USE' | translate }}</ion-label>
+        <ion-label class="confidential" (click)="privacyPpolicy()">{{ 'FOOTER.CONFIDENTIAL' | translate }}</ion-label>
+      </div>
+
+
+
+    </ion-tab-bar>
+    <div class="cookie-message" [hidden]="hiddeCookie">
+      <span>En poursuivant votre navigation sur ce site, vous acceptez l'utilisation des cookies 
+            pour vous proposer une meilleure expérience utilisateur</span>
+      <button class="btn btn-primary" (click)="manageCookie()">Ok</button> 
+    </div>
+
+  </ion-tabs>
+
+</ion-app>

@@ -1,0 +1,78 @@
+.africlean-small-button{
+    width: max-content;
+    height: max-content;
+    padding: 0.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    &.style-button-blue{
+    
+        color: white;
+        background: var(--ion-color-primary);
+        box-shadow: 1px 1px 12px var(--ion-color-primary);
+        padding: 0.4rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    &.style-button-orange{
+        
+        color: white;
+        background: var(--ion-color-secondary);
+        box-shadow: 1px 1px 12px var(--ion-color-secondary);
+        padding: 0.4rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    &.style-button-btn-orange {
+
+        color: white;
+        background: var(--ion-color-secondary);
+        box-shadow: 1px 1px 12px var(--ion-color-secondary);
+        // background: var(--ion-color-prospection);
+        // box-shadow: 1px 1px 12px var(--ion-color-prospection);
+        padding: 0.4rem;
+        width: 70vw;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &.style-button-abonnement {
+    
+        background:linear-gradient(130deg, var(--ion-color-consult-abonnement-lighter), var(--ion-color-consult-abonnement));
+        box-shadow: 1px 1px 12px var(--ion-color-consult-abonnement);
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    &.style-button-incident {
+    
+        background:linear-gradient(130deg, var(--ion-color-manage-incidents-lighter), var(--ion-color-manage-incidents));
+        box-shadow: 1px 1px 12px var(--ion-color-manage-incidents);
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+    }
+    &.style-button-btn-blue {
+
+        // background:linear-gradient(130deg, var(--ion-color-consult-finance-management-lighter), var(--ion-color-finance-management));
+        // box-shadow: 1px 1px 12px var(--ion-color-finance-management);
+        background: var(--ion-color-primary);
+        box-shadow: 1px 1px 12px var(--ion-color-primary);
+        padding: 0.4rem;
+        width: 70vw;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    &.style-button-grey {
+    
+        background:linear-gradient(130deg, var(--ion-color-grey), var(--ion-color-grey));
+        box-shadow: 1px 1px 12px var(--ion-color-grey);
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+    }
+
+}

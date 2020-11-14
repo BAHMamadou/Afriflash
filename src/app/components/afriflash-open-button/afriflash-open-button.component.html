@@ -1,0 +1,29 @@
+<div class="africlean-button"
+     [ngClass]="{
+         'style-button-consult-abonnement':theme == 'consult-abonnement',
+         'style-button-manage-incidents': theme == 'manage-incidents',
+          'style-button-manage-passage': theme == 'manage-passage',
+          'style-button-consult-informations': theme == 'consult-informations',
+          'style-button-consult-client':theme == 'consult-client',
+          'style-button-consult-employe': theme == 'consult-employe',
+          'style-button-consult-finance': theme == 'consult-finance',
+          'style-button-consult-logistic': theme == 'consult-logistic'
+  }">
+
+<div class="content-button">
+  <!-- Texte du bouton -->
+  <div class="text-div" *ngIf="action === 'create'">
+  <button  (click)="onAction()">
+          {{ title }}
+  </button>
+  </div>
+
+  <!-- Texte du bouton -->
+  <div class="text-div" *ngIf="action === 'prospect'">
+    <button  (click)="onAction()">
+      {{ title }}
+    </button>
+  </div>
+</div>
+
+</div>
