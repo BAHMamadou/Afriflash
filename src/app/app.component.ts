@@ -101,4 +101,7 @@ export class AppComponent {
         }
     }
 
+    contactUs() {
+
+    }
 }
