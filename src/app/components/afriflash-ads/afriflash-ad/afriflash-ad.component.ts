@@ -98,7 +98,7 @@ export class AfriflashAdComponent implements OnInit {
     ngOnInit() {
         this.getFormatDate();
         this.image = this.annonceInformation.annonce.photos.photo_1 ? this.annonceInformation.annonce.photos.photo_1 :
-            './assets/icon/annonce_img_default.PNG';
+            './assets/icon/annonce_img_default.png';
         this.annonceInformation.annonce.compteType === 'Professionnel' ? this.pro = true : this.pro = false;
         this.isWeb = this.config.isWeb();
     }

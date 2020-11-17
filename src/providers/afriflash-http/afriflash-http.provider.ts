@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export abstract class AfriflashHttpProvider {
 
     // TMP: a changer
-    protected URL_BASE = 'http://localhost:3000/';
+    protected URL_BASE = 'https://afriflash-back-recette.loca.lt/';
 
     constructor(protected http: HttpClient) {}
 
