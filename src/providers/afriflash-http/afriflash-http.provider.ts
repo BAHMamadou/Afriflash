@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export abstract class AfriflashHttpProvider {
 
     // TMP: a changer
-    protected URL_BASE = 'https://afriflash-back-recette.loca.lt/';
+    protected URL_BASE = 'https://e7462d1b4811.ngrok.io/';
 
     constructor(protected http: HttpClient) {}
 
